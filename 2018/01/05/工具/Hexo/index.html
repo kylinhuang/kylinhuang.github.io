@@ -109,6 +109,14 @@ github配置1 注册githug  用户名 username2 创建仓库   仓库名 usernam
                             </li>
                         
                             <li role="presentation" class="text-center">
+                                <a href="/categories/android/"><i class="fa "></i>android</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Flutter/"><i class="fa "></i>flutter</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
                                 <a href="/categories/前端/"><i class="fa "></i>前端</a>
                             </li>
                         
@@ -185,7 +193,7 @@ github配置1 注册githug  用户名 username2 创建仓库   仓库名 usernam
 <p>2 主题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> kylinhuang.github.io</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
 <p>修改 kylinhuang/_config.yml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: dimsky 的 9 维空间    //你博客的名字</span><br><span class="line"> author: dimsky  //你的名字</span><br><span class="line"> language: zh-Hans    //语言 中文</span><br><span class="line"> theme: next   //刚刚安装的主题名称</span><br><span class="line"> deploy:</span><br><span class="line">   <span class="built_in">type</span>: git    //使用Git 发布</span><br><span class="line">   repo: https://github.com/username/username.github.io.git    // 刚创建的Github仓库</span><br></pre></td></tr></table></figure></p>
 <p>3 写文章<br>在在username.github.io/source/_posts 下创建 博客</p>
-<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>1 测试<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>1 测试<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br><span class="line"></span><br><span class="line">or</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure></p>
 <p>浏览器中输入<a href="https://localhost:4000" target="_blank" rel="noopener">https://localhost:4000</a> 访问了</p>
 <p>2 发布<br>安装hexo-deployer-git自动部署发布工具<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
 <p>测试没问题后，我们就生成静态网页文件发布至我们的Github pages 中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure></p>
