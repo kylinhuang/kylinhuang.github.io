@@ -1,0 +1,444 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="android">
+
+
+    <meta name="description" content="Android  Notification123通知，是一种具有全局效果的通知，它展示在屏幕的顶端，首先会表现为一个图标的形式，当用户向下滑动的时候，展示出通知具体的内容。
+Android 的版...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Android  Notification | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Android  Notification">
+            
+	            Android  Notification
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/android/">android</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/android/">android</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/12/24</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="Android-Notification"><a href="#Android-Notification" class="headerlink" title="Android  Notification"></a>Android  Notification</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">通知，是一种具有全局效果的通知，它展示在屏幕的顶端，</span><br><span class="line"></span><br><span class="line">首先会表现为一个图标的形式，当用户向下滑动的时候，展示出通知具体的内容。</span><br></pre></td></tr></table></figure>
+<p>Android 的版本也快速的升级导致了一些兼容性的问题<br>几个重大的版本变更</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">android version</th>
+<th style="text-align:left">系统修改</th>
+<th style="text-align:left">简介</th>
+<th style="text-align:left">兼容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Android3.0 之前</td>
+<td style="text-align:left">使用Notification.Builder构建</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+</tr>
+<tr>
+<td style="text-align:left">Android3.0</td>
+<td style="text-align:left">推荐使用Notification.Builder构建</td>
+<td style="text-align:left">android.support.v4.app.NotificationCompat.Builder</td>
+<td style="text-align:left">一个Android向下版本的兼容包support.v4</td>
+</tr>
+<tr>
+<td style="text-align:left">Android 5.0</td>
+<td style="text-align:left">Google为了统一 通知栏风格，要求notification 图标都变成单色，如果不是单色则会通过算法变成单色。</td>
+<td style="text-align:left">当然这不是所有系统都强制改变的，目前好像只有nexus 系列 和 HTC手机会遵循这一原则。</td>
+<td style="text-align:left">builder.setSmallIcon 设置 单一颜色图片</td>
+</tr>
+<tr>
+<td style="text-align:left">Android 8.0</td>
+<td style="text-align:left">NotificationChannel是android8.0新增的特性</td>
+<td style="text-align:left">如果App的targetSDKVersion&gt;=26，没有设置channel通知渠道的话，就会导致通知无法展示</td>
+<td style="text-align:left">创建channel</td>
+</tr>
+<tr>
+<td style="text-align:left">Android 9.0</td>
+<td style="text-align:left">Notification 提升以及 刘海的适配</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">暂时 没有这款手机 没有实践 没有发言权</td>
+</tr>
+</tbody>
+</table>
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><p>市场上基本值兼容 android 4.X.X 以上版本<br>android 3.0 的 创建方法 就不介绍了  support.v4.NotificationCompat.Builder  可以很好的兼容 之前的版本</p>
+<p>适配 android 8.0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) &#123;</span><br><span class="line">    NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);</span><br><span class="line">    channel.canBypassDnd();//是否绕过请勿打扰模式</span><br><span class="line">    channel.enableLights(true);//闪光灯</span><br><span class="line">    channel.setLockscreenVisibility(Notification.VISIBILITY_SECRET);//锁屏显示通知</span><br><span class="line">    channel.setLightColor(Color.RED);//闪关灯的灯光颜色</span><br><span class="line">    channel.canShowBadge();//桌面launcher的消息角标</span><br><span class="line">    channel.enableVibration(true);//是否允许震动</span><br><span class="line">    channel.getAudioAttributes();//获取系统通知响铃声音的配置</span><br><span class="line">    channel.getGroup();//获取通知取到组</span><br><span class="line">    channel.setBypassDnd(true);//设置可绕过  请勿打扰模式</span><br><span class="line">    channel.setVibrationPattern(new long[]&#123;100, 100, 200&#125;);//设置震动模式</span><br><span class="line">    channel.shouldShowLights();//是否会有灯光</span><br><span class="line">    getManager().createNotificationChannel(channel);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">NotificationCompat.Builder builder = null;</span><br><span class="line">if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) &#123;</span><br><span class="line">    builder = new NotificationCompat.Builder(Utils.getContext(), CHANNEL_ID);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    builder = new NotificationCompat.Builder(Utils.getContext());</span><br><span class="line">    builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不同 </p>
+<ol>
+<li>android createNotificationChannel</li>
+<li>创建 NotificationCompat.Builder 方式</li>
+</ol>
+<h2 id="设置相关属性"><a href="#设置相关属性" class="headerlink" title="设置相关属性"></a>设置相关属性</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>设置方式</th>
+<th>是否必须</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setSmallIcon</td>
+<td>小图标</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>setContentTitle</td>
+<td>标题</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>setContentText</td>
+<td>内容</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>PendingIntent pi = PendingIntent.getActivity(Utils.getContext(), notificationId, intent, PendingIntent.FLAG_UPDATE_CURRENT);builder.setContentIntent(pi);</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>setAutoCancel</td>
+<td>点击自动删除通知</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>setWhen</td>
+<td>设置时间  按照时间排序显示</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>setGroupSummary</td>
+<td>设置分组显示</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>setGroup</td>
+<td>设置分组名</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">只有三个必要的属性   还有 其他很多不一一介绍了</span><br><span class="line">这些属性 不同手机上面 会存在不同的问题 国产手机 问题突出</span><br><span class="line">例如设置呼吸灯 小米有的手机不能达到预期(android 定制)</span><br></pre></td></tr></table></figure>
+<h3 id="兼容问题"><a href="#兼容问题" class="headerlink" title="兼容问题"></a>兼容问题</h3><h4 id="1-图标显示白色"><a href="#1-图标显示白色" class="headerlink" title="1. 图标显示白色"></a>1. 图标显示白色</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if(android.os.Build.VERSION.SDK_INT &gt;= android.os.Build.VERSION_CODES.LOLLIPOP)&#123;</span><br><span class="line">    builder.setSmallIcon(R.drawable.snap_icon);</span><br><span class="line">    builder.setColor(Utils.getContext().getResources().getColor(R.color.new_orange));</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    builder.setSmallIcon(R.drawable.snap_icon_notification);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-点击-notification-item-数据不对"><a href="#2-点击-notification-item-数据不对" class="headerlink" title="2. 点击 notification item  数据不对"></a>2. 点击 notification item  数据不对</h4><p>问题 点击 notification item 获取的数据 总是 最新的那条数据</p>
+<p>解决方案 </p>
+<p>PendingIntent.getActivity 中 requestCode<br>刚刚开始一直写成 0<br>导致的<br>requestCode 修改成 不一致 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PendingIntent pi = PendingIntent.getActivity(Utils.getContext(), notificationId, intent, PendingIntent.FLAG_UPDATE_CURRENT);</span><br></pre></td></tr></table></figure>
+<h2 id="系统显示"><a href="#系统显示" class="headerlink" title="系统显示"></a>系统显示</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">private static NotificationManager getManager() &#123;</span><br><span class="line">    if (mManager == null) &#123;</span><br><span class="line">        mManager = (NotificationManager) Utils.getContext().getSystemService(Context.NOTIFICATION_SERVICE);</span><br><span class="line">    &#125;</span><br><span class="line">    return mManager;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">getManager().notify(notificationId, notification);</span><br></pre></td></tr></table></figure>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ol>
+<li>悬浮通知不显示，只有状态栏有</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. 首先需要打开手机设置查看通知相关的权限(横幅)是否打开</span><br><span class="line"></span><br><span class="line">2. 对于Android8.0以下的手机，需要在设置builder时加入以下代码：</span><br><span class="line"></span><br><span class="line">//NotificationCompat.Builder builder</span><br><span class="line">builder.setPriority(NotificationCompat.PRIORITY_MAX)</span><br><span class="line">builder.setDefaults(DEFAULT_ALL)</span><br><span class="line"></span><br><span class="line">3.对于Android8.0以上的手机，需要在建立Channel时设置优先级为HIGH：</span><br><span class="line"></span><br><span class="line">NotificationChannel chan1 = new NotificationChannel(&quot;dynamic&quot;, &quot;Primary Channel&quot;, NotificationManager.IMPORTANCE_HIGH);</span><br></pre></td></tr></table></figure>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>更新 其实 与创建差不多</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">注意 </span><br><span class="line">1. notificationId 一定要一直</span><br><span class="line">2. PendingIntent.FLAG_UPDATE_CURRENT</span><br><span class="line"></span><br><span class="line">如</span><br><span class="line">PendingIntent pi = PendingIntent.getActivity(Utils.getContext(), notificationId, intent, PendingIntent.FLAG_UPDATE_CURRENT);</span><br></pre></td></tr></table></figure>
+<h2 id="取消"><a href="#取消" class="headerlink" title="取消"></a>取消</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NotificationManager nm = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>含有</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public void cancel(int id)</td>
+<td>表示该通知能被状态栏的清除按钮清除掉</td>
+<td></td>
+</tr>
+<tr>
+<td>public void cancelAll()</td>
+<td>移除所有已经显示的通知</td>
+<td></td>
+</tr>
+<tr>
+<td>public void notify(int id, Notification notification)</td>
+<td>提交一个通知在状态栏中显示。如果拥有相同标签和相同id的通知已经被提交而且没有被移除，该方法会更新之前的通知</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/02/14/android/pay/福卡/" class="pre-post btn btn-default" title="福卡e支付">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">福卡e支付</span>
+        </a>
+    
+    
+        <a href="/2018/12/07/android/Flutter/Flutter_1.0/" class="next-post btn btn-default" title="Flutter release 1.0">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Flutter release 1.0</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Notification"><span class="toc-text">Android  Notification</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建"><span class="toc-text">创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置相关属性"><span class="toc-text">设置相关属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#兼容问题"><span class="toc-text">兼容问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-图标显示白色"><span class="toc-text">1. 图标显示白色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-点击-notification-item-数据不对"><span class="toc-text">2. 点击 notification item  数据不对</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统显示"><span class="toc-text">系统显示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题"><span class="toc-text">问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新"><span class="toc-text">更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#取消"><span class="toc-text">取消</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

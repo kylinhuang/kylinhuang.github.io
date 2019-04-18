@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="stetho">
+
+
+    <meta name="description" content="Facebook stetho参考 stetho
+stetho是Facebook推出的安卓APP网络诊断和数据监控的工具，接入方便，功能强大，是开发者必备的好工具。
+主要功能包括：
+
+查看App...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>android stetho | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="android stetho">
+            
+	            android stetho
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/android/">android</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/stetho/">stetho</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/19</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="Facebook-stetho"><a href="#Facebook-stetho" class="headerlink" title="Facebook stetho"></a>Facebook stetho</h1><p><a href="https://github.com/facebook/stetho" target="_blank" rel="noopener">参考 stetho</a></p>
+<p>stetho是Facebook推出的安卓APP网络诊断和数据监控的工具，接入方便，功能强大，是开发者必备的好工具。</p>
+<p>主要功能包括：</p>
+<ol>
+<li>查看App的布局 </li>
+<li>网络请求抓包 </li>
+<li>数据库、sp文件查看 </li>
+<li>自定义dumpapp插件 </li>
+<li>对于JavaScript的支持</li>
+</ol>
+<p>无需root，只要能通过adb连接设备，操作方便。</p>
+<h1 id="use-stetho"><a href="#use-stetho" class="headerlink" title="use stetho"></a>use stetho</h1><p>adb方式连接到设备</p>
+<p>打开集成stetho功能的app<br><code>测试页面 输入 open_log 开启测试</code></p>
+<p>在Chrome浏览器地址栏中输入<br><code>chrome://inspect</code></p>
+<p>选择需要inspect的应用进程</p>
+<p><img src="https://raw.githubusercontent.com/kylinhuang/img/master/blog/stetho/stetho_1.png" alt></p>
+<h2 id="1-查看App的布局"><a href="#1-查看App的布局" class="headerlink" title="1. 查看App的布局"></a>1. 查看App的布局</h2><p><img src="https://raw.githubusercontent.com/kylinhuang/img/master/blog/stetho/stetho_layout.png" alt></p>
+<h2 id="2-网络请求抓包"><a href="#2-网络请求抓包" class="headerlink" title="2. 网络请求抓包"></a>2. 网络请求抓包</h2><p><img src="https://raw.githubusercontent.com/kylinhuang/img/master/blog/stetho/stetho_network.png" alt></p>
+<h2 id="3-数据库、sp文件查看"><a href="#3-数据库、sp文件查看" class="headerlink" title="3. 数据库、sp文件查看"></a>3. 数据库、sp文件查看</h2><p><img src="https://raw.githubusercontent.com/kylinhuang/img/master/blog/stetho/stetho_storage.png" alt></p>
+<h2 id="4-自定义dumpapp插件"><a href="#4-自定义dumpapp插件" class="headerlink" title="4. 自定义dumpapp插件"></a>4. 自定义dumpapp插件</h2><p>暂 未实现</p>
+<h2 id="5-对于JavaScript的支持"><a href="#5-对于JavaScript的支持" class="headerlink" title="5. 对于JavaScript的支持"></a>5. 对于JavaScript的支持</h2><p><img src="https://raw.githubusercontent.com/kylinhuang/img/master/blog/stetho/stetho_js.png" alt></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/21/资源/openwrt/Openwrt/" class="pre-post btn btn-default" title="Openwrt KodExplorer 搭建私有云存储">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Openwrt KodExplorer 搭建私有云存储</span>
+        </a>
+    
+    
+        <a href="/2018/11/19/android/API/android_API_变更/" class="next-post btn btn-default" title="android API 变更">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">android API 变更</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Facebook-stetho"><span class="toc-text">Facebook stetho</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#use-stetho"><span class="toc-text">use stetho</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-查看App的布局"><span class="toc-text">1. 查看App的布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-网络请求抓包"><span class="toc-text">2. 网络请求抓包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-数据库、sp文件查看"><span class="toc-text">3. 数据库、sp文件查看</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-自定义dumpapp插件"><span class="toc-text">4. 自定义dumpapp插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-对于JavaScript的支持"><span class="toc-text">5. 对于JavaScript的支持</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

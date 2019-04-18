@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="Flutter">
+
+
+    <meta name="description" content="dart 语言 https://www.dartlang.org
+Dart 入门基础 基础类型变量 Variables12345 var name = &apos;Bob&apos;;//  d...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Dart 入门基础 基础类型 | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Dart 入门基础 基础类型">
+            
+	            Dart 入门基础 基础类型
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/Flutter/">Flutter</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Flutter/">Flutter</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/08/26</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>dart 语言 <a href="https://www.dartlang.org" target="_blank" rel="noopener">https://www.dartlang.org</a></p>
+<h1 id="Dart-入门基础-基础类型"><a href="#Dart-入门基础-基础类型" class="headerlink" title="Dart 入门基础 基础类型"></a>Dart 入门基础 基础类型</h1><h2 id="变量-Variables"><a href="#变量-Variables" class="headerlink" title="变量 Variables"></a>变量 Variables</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> var name = &apos;Bob&apos;;</span><br><span class="line">//  dynamic name = &apos;Bob&apos;;</span><br><span class="line">//  Object name = &apos;Bob&apos;;</span><br><span class="line"></span><br><span class="line">//    name = new Object();</span><br></pre></td></tr></table></figure>
+<h2 id="常量-Final-and-const"><a href="#常量-Final-and-const" class="headerlink" title="常量 Final and const"></a>常量 Final and const</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">final name = &apos;Bob&apos;; // Without a type annotation</span><br><span class="line">final String nickname = &apos;Bobby&apos;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const bar = 1000000; // Unit of pressure (dynes/cm2)</span><br><span class="line">const double atm = 1.01325 * bar; // Standard atmosphere</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  var foo = const [1];</span><br><span class="line">  final bar = const [1,2,3];</span><br><span class="line">  const baz =  const [5]; // Equivalent to `const []`</span><br></pre></td></tr></table></figure>
+<h2 id="Built-in-types"><a href="#Built-in-types" class="headerlink" title="Built-in types"></a>Built-in types</h2><ul>
+<li>numbers</li>
+<li>strings</li>
+<li>booleans</li>
+<li>lists (also known as arrays)</li>
+<li>maps</li>
+<li>runes (for expressing Unicode characters in a string)</li>
+<li>symbols</li>
+</ul>
+<h3 id="Numbers"><a href="#Numbers" class="headerlink" title="Numbers"></a>Numbers</h3><ul>
+<li>int</li>
+<li>double</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int x = 1;</span><br><span class="line">int hex = 0xDEADBEEF;</span><br><span class="line"></span><br><span class="line">double y = 1.1;</span><br><span class="line">double exponents = 1.42e5;</span><br></pre></td></tr></table></figure>
+<h2 id="数字与布尔值"><a href="#数字与布尔值" class="headerlink" title="数字与布尔值"></a>数字与布尔值</h2><h3 id="部分属性"><a href="#部分属性" class="headerlink" title="部分属性"></a>部分属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">int figureA = -93;</span><br><span class="line"></span><br><span class="line">// figureA是否为负数</span><br><span class="line">print(figureA.isNegative);</span><br><span class="line"></span><br><span class="line">// figureA是否是有限的</span><br><span class="line">print(figureA.isFinite);</span><br><span class="line"></span><br><span class="line">// figureA是否正无穷大或负无穷大</span><br><span class="line">print(figureA.isInfinite);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">double figureB = 64.742;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 返回figureB的符号，-1.0:值小于0、+1.0:值大于0、-0.0/0.0/NaN:值是其本身</span><br><span class="line">print(figureB.sign);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 返回figureB运行时的类型</span><br><span class="line">print(figureB.runtimeType);</span><br><span class="line"></span><br><span class="line">// 返回figureB的哈希码</span><br><span class="line">print(figureB.hashCode);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int figureC = 13;</span><br><span class="line"></span><br><span class="line">// figureC是否为奇数</span><br><span class="line">print(figureC.isOdd);</span><br><span class="line"></span><br><span class="line">// figureC是否为偶数</span><br><span class="line">print(figureC.isEven);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 返回figureC所占存储位</span><br><span class="line">print(figureC.bitLength);</span><br></pre></td></tr></table></figure>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">int figureA = -93;</span><br><span class="line"></span><br><span class="line">// 返回figureA的绝对值</span><br><span class="line">print(figureA.abs());</span><br><span class="line"></span><br><span class="line">// 返回figureA的字符串</span><br><span class="line">print(figureA.toString());</span><br><span class="line"></span><br><span class="line">double figureB = 64.742;</span><br><span class="line">// 返回figureB的整数值</span><br><span class="line">print(figureB.toInt());</span><br><span class="line"></span><br><span class="line">// 返回figureB的双精度值</span><br><span class="line">print(figureB.toDouble());</span><br><span class="line"></span><br><span class="line">// 返回大于figureB的双精度值</span><br><span class="line">print(figureB.ceilToDouble());</span><br><span class="line"></span><br><span class="line">// 返回小于figureB的双精度值</span><br><span class="line">print(figureB.floorToDouble());</span><br><span class="line"></span><br><span class="line">// 返回figureB四舍五入的双精度值</span><br><span class="line">print(figureB.roundToDouble());</span><br><span class="line"></span><br><span class="line">// 返回figureB保留几位小数的字符串</span><br><span class="line">print(figureB.toStringAsFixed(2));</span><br><span class="line"></span><br><span class="line">// 返回figureB保留几位小数后精确结果的字符串</span><br><span class="line">print(figureB.toStringAsPrecision(3));</span><br><span class="line"></span><br><span class="line">int figureC = 31;</span><br><span class="line">// figureC对比其他整数，0:相同、1:大于、-1:小于</span><br><span class="line">print(figureC.compareTo(20));</span><br><span class="line"></span><br><span class="line">// 将figureC控制在指定区间的整数</span><br><span class="line">print(figureC.clamp(20, 25));</span><br><span class="line"></span><br><span class="line">// 返回figureC转换成指定基数(进制)的字符串</span><br><span class="line">print(figureC.toRadixString(16));</span><br><span class="line"></span><br><span class="line">int figureD = 12;</span><br><span class="line">// 返回figureD与其他整数的最大公约数</span><br><span class="line">print(figureD.gcd(18));</span><br><span class="line"></span><br><span class="line">// 返回figureDg与其他整数的截取余数</span><br><span class="line">print(figureD.remainder(18));</span><br><span class="line"></span><br><span class="line">// 返回figureD几次幂值的字符串</span><br><span class="line">print(figureD.toStringAsExponential(2));</span><br></pre></td></tr></table></figure>
+<h2 id="字符串常量与变量"><a href="#字符串常量与变量" class="headerlink" title="字符串常量与变量"></a>字符串常量与变量</h2><h3 id="字符串常量"><a href="#字符串常量" class="headerlink" title="字符串常量"></a>字符串常量</h3><p>String是一成不变的，一旦定义就不能改变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String name = &quot;XiaoMing say : \n&quot;;</span><br><span class="line">String say = &quot;&quot;&quot;</span><br><span class="line">Keep on going ...</span><br><span class="line">never give up ...</span><br><span class="line">never say die ...</span><br><span class="line">&quot;&quot;&quot;;</span><br><span class="line">print(name + say);</span><br></pre></td></tr></table></figure>
+<h4 id="部分属性-1"><a href="#部分属性-1" class="headerlink" title="部分属性"></a>部分属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;Hello world!&quot;;</span><br><span class="line">// 返回字符串的UTF-16代码单元列表</span><br><span class="line">print(str.codeUnits);</span><br><span class="line">// 返回根据代码单元生成的哈希码</span><br><span class="line">print(str.hashCode);</span><br><span class="line">// 字符串是否为空</span><br><span class="line">print(str.isEmpty);</span><br><span class="line">// 字符串是否不为空</span><br><span class="line">print(str.isNotEmpty);</span><br><span class="line">// 字符串的长度</span><br><span class="line">print(str.length);</span><br><span class="line">// 返回字符串Unicode代码的可迭代对象</span><br><span class="line">print(str.runes);</span><br><span class="line">// 返回对象运行时的类型</span><br><span class="line">print(str.runtimeType);</span><br></pre></td></tr></table></figure>
+<h4 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h4><p>返回对象的字符串表示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;Hello world!&quot;;</span><br><span class="line">print(str.toString());</span><br></pre></td></tr></table></figure>
+<h5 id="截取字符串"><a href="#截取字符串" class="headerlink" title="截取字符串"></a>截取字符串</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str = &apos;Dart is fun&apos;;</span><br><span class="line">String newStr = str.substring(0, 4);</span><br><span class="line">print(newStr);</span><br></pre></td></tr></table></figure>
+<h5 id="在字符串中插入字符串"><a href="#在字符串中插入字符串" class="headerlink" title="在字符串中插入字符串"></a>在字符串中插入字符串</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = &quot;XiaoMing&quot;;</span><br><span class="line">print(&quot;My name is $&#123;name&#125;&quot;);</span><br></pre></td></tr></table></figure>
+<h5 id="输出字符串的Unicode编码"><a href="#输出字符串的Unicode编码" class="headerlink" title="输出字符串的Unicode编码"></a>输出字符串的Unicode编码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;Dart&quot;;</span><br><span class="line">print(str.codeUnitAt(0));</span><br><span class="line">print(str.codeUnits);</span><br></pre></td></tr></table></figure>
+<h5 id="去掉字符串前后空格"><a href="#去掉字符串前后空格" class="headerlink" title="去掉字符串前后空格"></a>去掉字符串前后空格</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;\tDart is fun\n&quot;;</span><br><span class="line">print(str.trimLeft());</span><br><span class="line">print(str.trimRight());</span><br><span class="line">print(str.trim());</span><br></pre></td></tr></table></figure>
+<h5 id="字符串的大小写转换"><a href="#字符串的大小写转换" class="headerlink" title="字符串的大小写转换"></a>字符串的大小写转换</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;ABCdef&quot;;</span><br><span class="line">print(str.toLowerCase());</span><br><span class="line">print(str.toUpperCase());</span><br></pre></td></tr></table></figure>
+<h5 id="拆分字符串"><a href="#拆分字符串" class="headerlink" title="拆分字符串"></a>拆分字符串</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String strA = &quot;Hello world!&quot;;</span><br><span class="line">print(strA.split(&quot; &quot;));</span><br><span class="line"></span><br><span class="line">String strB = &quot;abba&quot;;</span><br><span class="line">print(strB.split(new RegExp(r&quot;b*&quot;)));</span><br></pre></td></tr></table></figure>
+<h5 id="是否包含其他字符串"><a href="#是否包含其他字符串" class="headerlink" title="是否包含其他字符串"></a>是否包含其他字符串</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String str = &apos;Dart strings&apos;;</span><br><span class="line">print(str.contains(&apos;D&apos;));</span><br><span class="line">print(str.contains(new RegExp(r&apos;[A-Z]&apos;)));</span><br><span class="line">print(str.contains(&apos;D&apos;, 0));</span><br><span class="line">print(str.contains(new RegExp(r&apos;[A-Z]&apos;), 0));</span><br></pre></td></tr></table></figure>
+<h5 id="在字符串前后补占位符"><a href="#在字符串前后补占位符" class="headerlink" title="在字符串前后补占位符"></a>在字符串前后补占位符</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;86&quot;;</span><br><span class="line">print(str.padLeft(4, &apos;0&apos;));</span><br><span class="line">print(str.padRight(4, &apos;0&apos;));</span><br></pre></td></tr></table></figure>
+<h5 id="获取指定字符出现的位置"><a href="#获取指定字符出现的位置" class="headerlink" title="获取指定字符出现的位置"></a>获取指定字符出现的位置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String str = &apos;Dartisans&apos;;</span><br><span class="line"></span><br><span class="line">print(str.indexOf(&apos;art&apos;));</span><br><span class="line">print(str.indexOf(new RegExp(r&apos;[A-Z][a-z]&apos;)));</span><br><span class="line"></span><br><span class="line">print(str.lastIndexOf(&apos;a&apos;));</span><br><span class="line">print(str.lastIndexOf(new RegExp(r&apos;a(r|n)&apos;)));</span><br></pre></td></tr></table></figure>
+<h5 id="替换字符串中所有匹配字符"><a href="#替换字符串中所有匹配字符" class="headerlink" title="替换字符串中所有匹配字符"></a>替换字符串中所有匹配字符</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;resume&quot;;</span><br><span class="line">print(str.replaceAll(new RegExp(r&apos;e&apos;), &apos;é&apos;));</span><br></pre></td></tr></table></figure>
+<h3 id="字符串变量"><a href="#字符串变量" class="headerlink" title="字符串变量"></a>字符串变量</h3><p>StringBuffer是可改变的，定义后还可以再修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer xiaomingSaid = new StringBuffer();</span><br><span class="line">xiaomingSaid.write(&quot;All the world&apos;s a stage ... &quot;);</span><br><span class="line">xiaomingSaid.write(&quot;And all the men and women merely players ...&quot;);</span><br><span class="line">print(xiaomingSaid);</span><br></pre></td></tr></table></figure>
+<h4 id="部分属性-2"><a href="#部分属性-2" class="headerlink" title="部分属性"></a>部分属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer strBuf = new StringBuffer();</span><br><span class="line">strBuf.write(&quot;Sow nothing, reap nothing.&quot;);</span><br><span class="line">// 返回字符串缓冲区的哈希码</span><br><span class="line">print(strBuf.hashCode);</span><br><span class="line">// 字符串缓冲区是否为空</span><br><span class="line">print(strBuf.isEmpty);</span><br><span class="line">// 字符串缓冲区是否不为空</span><br><span class="line">print(strBuf.isNotEmpty);</span><br><span class="line">// 返回字符串缓冲区累积内容的长度</span><br><span class="line">print(strBuf.length);</span><br><span class="line">// 返回对象运行时的类型</span><br><span class="line">print(runtimeType);</span><br></pre></td></tr></table></figure>
+<h4 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer strBuf = new StringBuffer();</span><br><span class="line">// 添加字符串到字符串缓冲区内</span><br><span class="line">strBuf.write(&quot;Do one thing at a time, and do well.&quot;);</span><br><span class="line">// 返回字符串缓冲区的所有内容</span><br><span class="line">print(strBuf.toString());</span><br><span class="line">// 清除字符串缓冲区</span><br><span class="line">strBuf.clear();</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/08/26/android/Flutter/dart/Dart 入门基础 正则表达式/" class="pre-post btn btn-default" title="Dart 入门基础 正则表达式">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Dart 入门基础 正则表达式</span>
+        </a>
+    
+    
+        <a href="/2018/08/26/android/Flutter/Flutter 简介/" class="next-post btn btn-default" title="Flutter 简介">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Flutter 简介</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dart-入门基础-基础类型"><span class="toc-text">Dart 入门基础 基础类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#变量-Variables"><span class="toc-text">变量 Variables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常量-Final-and-const"><span class="toc-text">常量 Final and const</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Built-in-types"><span class="toc-text">Built-in types</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Numbers"><span class="toc-text">Numbers</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数字与布尔值"><span class="toc-text">数字与布尔值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#部分属性"><span class="toc-text">部分属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用方法"><span class="toc-text">常用方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串常量与变量"><span class="toc-text">字符串常量与变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串常量"><span class="toc-text">字符串常量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#部分属性-1"><span class="toc-text">部分属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用方法-1"><span class="toc-text">常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#截取字符串"><span class="toc-text">截取字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在字符串中插入字符串"><span class="toc-text">在字符串中插入字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#输出字符串的Unicode编码"><span class="toc-text">输出字符串的Unicode编码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#去掉字符串前后空格"><span class="toc-text">去掉字符串前后空格</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#字符串的大小写转换"><span class="toc-text">字符串的大小写转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#拆分字符串"><span class="toc-text">拆分字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#是否包含其他字符串"><span class="toc-text">是否包含其他字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在字符串前后补占位符"><span class="toc-text">在字符串前后补占位符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#获取指定字符出现的位置"><span class="toc-text">获取指定字符出现的位置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#替换字符串中所有匹配字符"><span class="toc-text">替换字符串中所有匹配字符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串变量"><span class="toc-text">字符串变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#部分属性-2"><span class="toc-text">部分属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用方法-2"><span class="toc-text">常用方法</span></a></li></ol></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

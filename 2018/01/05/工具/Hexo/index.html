@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content>
+
+
+    <meta name="description" content="使用 Hexo githbub搭建 blog
+github配置1 注册githug  用户名 username2 创建仓库   仓库名 username.github.io注册名 和仓库名中 u...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Hexo github 搭建 blog | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Hexo github 搭建 blog">
+            
+	            Hexo github 搭建 blog
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/工具/">工具</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/01/05</span>
+        </span>
+        
+    
+</div>
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>467</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>使用 Hexo githbub搭建 blog</p>
+<h2 id="github配置"><a href="#github配置" class="headerlink" title="github配置"></a>github配置</h2><p>1 注册githug  用户名 username<br>2 创建仓库   仓库名 username.github.io<br>注册名 和仓库名中 username 必须保持一致</p>
+<h2 id="本地环境搭建"><a href="#本地环境搭建" class="headerlink" title="本地环境搭建"></a>本地环境搭建</h2><p>1 install git<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git   // 安装Git</span><br></pre></td></tr></table></figure></p>
+<p>2 install nodejs<br>3 install Hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>1 创建项目<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line">hexo init kylinhuang.github.io</span><br></pre></td></tr></table></figure></p>
+<p>2 主题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> kylinhuang.github.io</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
+<p>修改 kylinhuang/_config.yml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: dimsky 的 9 维空间    //你博客的名字</span><br><span class="line"> author: dimsky  //你的名字</span><br><span class="line"> language: zh-Hans    //语言 中文</span><br><span class="line"> theme: next   //刚刚安装的主题名称</span><br><span class="line"> deploy:</span><br><span class="line">   <span class="built_in">type</span>: git    //使用Git 发布</span><br><span class="line">   repo: https://github.com/username/username.github.io.git    // 刚创建的Github仓库</span><br></pre></td></tr></table></figure></p>
+<p>3 写文章<br>在在username.github.io/source/_posts 下创建 博客</p>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>1 测试<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
+<p>浏览器中输入<a href="https://localhost:4000" target="_blank" rel="noopener">https://localhost:4000</a> 访问了</p>
+<p>2 发布<br>安装hexo-deployer-git自动部署发布工具<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>测试没问题后，我们就生成静态网页文件发布至我们的Github pages 中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure></p>
+<p>第一次 需要输入github邮箱密码</p>
+<p>5分钟后 应该能访问了<br><a href="http://kylinhuang.github.io" target="_blank" rel="noopener">http://kylinhuang.github.io</a></p>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-admin</span><br><span class="line">hexo server -d</span><br><span class="line"></span><br><span class="line">hexo s &amp;  后台运行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http://localhost:4000/   - 预览页面</span><br><span class="line">http://localhost:4000/admin  - 编辑页面</span><br></pre></td></tr></table></figure>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p><a href="https://hexo.io/zh-cn/docs/front-matter.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/front-matter.html</a></p>
+<h3 id="hexo-添加-流程图"><a href="#hexo-添加-流程图" class="headerlink" title="hexo 添加 流程图"></a>hexo 添加 流程图</h3><h3 id="hexo-添加-时序图"><a href="#hexo-添加-时序图" class="headerlink" title="hexo 添加 时序图"></a>hexo 添加 时序图</h3><ol>
+<li>hexo-filter-sequence 插件:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-filter-sequence</span><br></pre></td></tr></table></figure>
+<p>2.配置</p>
+<p>站点配置文件 _config.yml 中增加如下配置:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sequence:</span><br><span class="line">  webfont: https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js</span><br><span class="line">  raphael: https://cdn.bootcss.com/raphael/2.2.7/raphael.min.js</span><br><span class="line">  underscore: https://cdn.bootcss.com/underscore.js/1.8.3/underscore-min.js</span><br><span class="line">  sequence: https://cdn.bootcss.com/js-sequence-diagrams/1.0.6/sequence-diagram-min.js</span><br><span class="line">  css: # optional, the url for css, such as hand drawn theme </span><br><span class="line">  options: </span><br><span class="line">    theme: simple</span><br><span class="line">    css_class:</span><br></pre></td></tr></table></figure></p>
+<h2 id="Hexo-plugins"><a href="#Hexo-plugins" class="headerlink" title="Hexo plugins"></a>Hexo plugins</h2><p><a href="https://hexo.io/plugins/" target="_blank" rel="noopener">https://hexo.io/plugins/</a></p>
+<h3 id="1-HEXO-browsersync"><a href="#1-HEXO-browsersync" class="headerlink" title="1 HEXO-browsersync"></a>1 HEXO-browsersync</h3><p>适用于Hexo的BrowserSync插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-browsersync --save</span><br><span class="line"></span><br><span class="line">_config.yml 中 </span><br><span class="line"></span><br><span class="line">browsersync:</span><br><span class="line">  logLevel: &quot;warn&quot;</span><br><span class="line">  ghostMode:</span><br><span class="line">    scroll: true</span><br><span class="line">  instanceName: &quot;uniqueString&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="2-Hexo博客文章影藏-hexo-generator-index2"><a href="#2-Hexo博客文章影藏-hexo-generator-index2" class="headerlink" title="2 Hexo博客文章影藏 hexo-generator-index2"></a>2 Hexo博客文章影藏 hexo-generator-index2</h3><p>在Hexo插件库找到一个产生首页的插件，自带过滤功能，hexo-generator-index2。</p>
+<p>安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index2 --save</span><br><span class="line">npm uninstall hexo-generator-index --save</span><br></pre></td></tr></table></figure></p>
+<p>修改hexo的配置文件</p>
+<p>打开hexo博客根目录下的_config.yml<br>添加以下内容，过滤分类或者标签为hide的文章</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># index2 generator是否包含官方的hexo-generator-index，默认true（包含）</span><br><span class="line">index2_include_index: true</span><br><span class="line">index2_generator:</span><br><span class="line">per_page: 8</span><br><span class="line">order_by: -date # 按发布时间排序</span><br><span class="line">exclude:</span><br><span class="line">- tag hide # 不包含标签为hide的文章</span><br><span class="line">- category hide # 不包含分类为hide的文章</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/01/25/android/android_studio_log/" class="pre-post btn btn-default" title="android studio logcat 设置 缓存大小">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">android studio logcat 设置 缓存大小</span>
+        </a>
+    
+    
+        <a href="/2017/12/21/后端/3.3 模板引擎/" class="next-post btn btn-default" title="3.3 模板引擎">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">3.3 模板引擎</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#github配置"><span class="toc-text">github配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地环境搭建"><span class="toc-text">本地环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建项目"><span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译"><span class="toc-text">编译</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#插件"><span class="toc-text">插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo-添加-流程图"><span class="toc-text">hexo 添加 流程图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo-添加-时序图"><span class="toc-text">hexo 添加 时序图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-plugins"><span class="toc-text">Hexo plugins</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-HEXO-browsersync"><span class="toc-text">1 HEXO-browsersync</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Hexo博客文章影藏-hexo-generator-index2"><span class="toc-text">2 Hexo博客文章影藏 hexo-generator-index2</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

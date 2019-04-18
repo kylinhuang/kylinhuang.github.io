@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="Flutter">
+
+
+    <meta name="description" content="android Flutter 国际化国际化 Flutter 应用
+一 本地环境配置1. 下载1.1 下载压缩包flutter_macos_v0.3.1-beta.zip 
+解压即可
+1.2 g...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>android Flutter 国际化 | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="android Flutter 国际化">
+            
+	            android Flutter 国际化
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/Flutter/">Flutter</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Flutter/">Flutter</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/08/19</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="android-Flutter-国际化"><a href="#android-Flutter-国际化" class="headerlink" title="android Flutter 国际化"></a>android Flutter 国际化</h1><p><a href="http://doc.flutter-dev.cn/tutorials/internationalization/" title="国际化 Flutter 应用" target="_blank" rel="noopener">国际化 Flutter 应用</a></p>
+<h2 id="一-本地环境配置"><a href="#一-本地环境配置" class="headerlink" title="一 本地环境配置"></a>一 本地环境配置</h2><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h3><h4 id="1-1-下载压缩包"><a href="#1-1-下载压缩包" class="headerlink" title="1.1 下载压缩包"></a>1.1 下载压缩包</h4><p><a href="https://storage.googleapis.com/flutter_infra/releases/beta/macos/flutter_macos_v0.3.1-beta.zip" title="flutter_macos_v0.3.1-beta.zip" target="_blank" rel="noopener">flutter_macos_v0.3.1-beta.zip</a> </p>
+<p>解压即可</p>
+<h4 id="1-2-git-下载"><a href="#1-2-git-下载" class="headerlink" title="1.2 git 下载"></a>1.2 git 下载</h4><p>如果你是第一次在你机器上安装 Flutter ，克隆 beta 分支的仓库然后添加 flutter 工具到你的路径</p>
+<pre><code>git clone -b beta https://github.com/flutter/flutter.git
+export PATH=`pwd`/flutter/bin:$PATH
+</code></pre><h3 id="2-设置环境变量"><a href="#2-设置环境变量" class="headerlink" title="2. 设置环境变量"></a>2. 设置环境变量</h3><p>.bash_profile中添加 以下代码  </p>
+<p>[PATH_TO_FLUTTER_GIT_DIRECTORY] 为本地路径</p>
+<pre><code>export PATH=[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin:$PATH
+</code></pre><p>刷新 文件</p>
+<p><code>source $HOME/.bash_profile</code></p>
+<p>check wherther the installation is successful</p>
+<p><code>flutter doctor</code></p>
+<h2 id="二-工具-环境配置"><a href="#二-工具-环境配置" class="headerlink" title="二 工具 环境配置"></a>二 工具 环境配置</h2><h3 id="1-android-Studio-环境配置"><a href="#1-android-Studio-环境配置" class="headerlink" title="1. android Studio 环境配置"></a>1. android Studio 环境配置</h3><p>参考 官方文档<br><a href="https://flutter.io/get-started/editor/#androidstudio" target="_blank" rel="noopener">https://flutter.io/get-started/editor/#androidstudio</a></p>
+<p>android Studio  安装 flutter 插件<br>(Plugins &gt; Browserepositories &gt; 搜索 Flutter 选择安装)<br><img src="http://p3cnyeawt.bkt.clouddn.com/flutter-androidstudio-config.png" alt></p>
+<p>安装完成出出现<br>Start a new Flutter project<br>创建 Flutter项目</p>
+<h3 id="2-IOS-环境配置"><a href="#2-IOS-环境配置" class="headerlink" title="2. IOS 环境配置"></a>2. IOS 环境配置</h3><p>mac 中 安装 Xcode<br>命令行<br><code>sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer</code></p>
+<p><code>sudo xcodebuild -license</code></p>
+<p>创建ios模拟器<br><code>open -a Simulator</code></p>
+<h3 id="3-idea-环境配置"><a href="#3-idea-环境配置" class="headerlink" title="3. idea 环境配置"></a>3. idea 环境配置</h3><p>idea 可以运行 android  IOS 平台<br>先安装插件 Filtter 重启idea</p>
+<p>创建项目<br>选择Flutter<br>运行</p>
+<h2 id="三-问题"><a href="#三-问题" class="headerlink" title="三 问题"></a>三 问题</h2><h3 id="1-idea-Please-configure-Android-SDK"><a href="#1-idea-Please-configure-Android-SDK" class="headerlink" title="1 idea Please configure Android SDK"></a>1 idea Please configure Android SDK</h3><p><a href="https://stackoverflow.com/questions/21070268/intellij-idea-13-error-please-select-android-sdk" target="_blank" rel="noopener">https://stackoverflow.com/questions/21070268/intellij-idea-13-error-please-select-android-sdk</a></p>
+<h3 id="2-idea-Dart-SDK-is-not-configured"><a href="#2-idea-Dart-SDK-is-not-configured" class="headerlink" title="2 idea Dart SDK is not configured"></a>2 idea Dart SDK is not configured</h3><p>下载<br><a href="https://www.dartlang.org/tools/sdk/archive" target="_blank" rel="noopener">https://www.dartlang.org/tools/sdk/archive</a></p>
+<p>配置</p>
+<p>运行成功</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/08/24/android/Flutter/Flutter目录/" class="pre-post btn btn-default" title="Flutter 目录">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Flutter 目录</span>
+        </a>
+    
+    
+        <a href="/2018/08/18/android/Flutter/Flutter android编译正式版本/" class="next-post btn btn-default" title="android Flutter 编译正式版本">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">android Flutter 编译正式版本</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#android-Flutter-国际化"><span class="toc-text">android Flutter 国际化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-本地环境配置"><span class="toc-text">一 本地环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-下载"><span class="toc-text">1. 下载</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-下载压缩包"><span class="toc-text">1.1 下载压缩包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-git-下载"><span class="toc-text">1.2 git 下载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-设置环境变量"><span class="toc-text">2. 设置环境变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-工具-环境配置"><span class="toc-text">二 工具 环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-android-Studio-环境配置"><span class="toc-text">1. android Studio 环境配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-IOS-环境配置"><span class="toc-text">2. IOS 环境配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-idea-环境配置"><span class="toc-text">3. idea 环境配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-问题"><span class="toc-text">三 问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-idea-Please-configure-Android-SDK"><span class="toc-text">1 idea Please configure Android SDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-idea-Dart-SDK-is-not-configured"><span class="toc-text">2 idea Dart SDK is not configured</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="Flutter">
+
+
+    <meta name="description" content="Flutter 2.创建app1.创建项目 运行123456789101112131415161718192021import 'package:flutter/material.dart';v...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Flutter 2.创建app | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Flutter 2.创建app">
+            
+	            Flutter 2.创建app
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/Flutter/">Flutter</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Flutter/">Flutter</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/07/11</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="Flutter-2-创建app"><a href="#Flutter-2-创建app" class="headerlink" title="Flutter 2.创建app"></a>Flutter 2.创建app</h1><h2 id="1-创建项目-运行"><a href="#1-创建项目-运行" class="headerlink" title="1.创建项目 运行"></a>1.创建项目 运行</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() =&gt; runApp(<span class="keyword">new</span> MyApp());</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MaterialApp(</span><br><span class="line">      title: <span class="string">'Welcome to Flutter'</span>,</span><br><span class="line">      home: <span class="keyword">new</span> Scaffold(</span><br><span class="line">        appBar: <span class="keyword">new</span> AppBar(</span><br><span class="line">          title: <span class="keyword">new</span> Text(<span class="string">'Welcome to Flutter'</span>),</span><br><span class="line">        ),</span><br><span class="line">        body: <span class="keyword">new</span> Center(</span><br><span class="line">          child: <span class="keyword">new</span> Text(<span class="string">'Hello World'</span>),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>main函数使用了(=&gt;)符号, 这是Dart中单行函数或方法的简写。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() =&gt; runApp(<span class="keyword">new</span> MyApp());</span><br><span class="line"></span><br><span class="line">等价于</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  runApp(<span class="keyword">new</span> MyApp());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建app 继承 StatelessWidget</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br></pre></td></tr></table></figure>
+<p>Scaffold 是 Material library 中提供的一个widget, 它提供了默认的导航栏、标题和包含主屏幕widget树的body属性。widget树可以很复杂。</p>
+<p>widget的主要工作是提供一个build()方法来描述如何根据其他较低级别的widget来显示自己。</p>
+<p>本示例中的body的widget树中包含了一个Center widget, Center widget又包含一个 Text 子widget。 Center widget可以将其子widget树对其到屏幕中心。</p>
+<h2 id="2-更改-AppBar"><a href="#2-更改-AppBar" class="headerlink" title="2 更改 AppBar"></a>2 更改 AppBar</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MaterialApp(</span><br><span class="line">      title: <span class="string">'Welcome to Flutter'</span>,</span><br><span class="line">      home: <span class="keyword">new</span> Scaffold(</span><br><span class="line">        appBar: <span class="keyword">new</span> AppBar(</span><br><span class="line">          title: <span class="keyword">new</span> Text(<span class="string">"Flutter"</span>),</span><br><span class="line">          actions: &lt;Widget&gt;[</span><br><span class="line">            <span class="keyword">new</span> IconButton(icon: <span class="keyword">new</span> Icon(Icons.add_alert), onPressed: ()&#123; _pressed(<span class="string">"add_alert"</span>); &#125;),</span><br><span class="line"></span><br><span class="line">            <span class="keyword">new</span> IconButton(icon: <span class="keyword">new</span> Icon(Icons.<span class="built_in">print</span>), onPressed: ()&#123; _pressed(<span class="string">"print"</span>); &#125;),</span><br><span class="line">            <span class="keyword">new</span> IconButton(icon: <span class="keyword">new</span> Icon(Icons.people), onPressed: ()&#123; _pressed(<span class="string">"people"</span>); &#125;),</span><br><span class="line">            </span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">        body: <span class="keyword">new</span> Center(</span><br><span class="line">          child: <span class="keyword">new</span> Text(<span class="string">'Hello World'</span>),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://p3cnyeawt.bkt.clouddn.com/flutter1.jpg" alt></p>
+<h2 id="3-pubspec-yaml"><a href="#3-pubspec-yaml" class="headerlink" title="3   pubspec.yaml"></a>3   pubspec.yaml</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">name: flutterdemo</span><br><span class="line">description: A <span class="keyword">new</span> Flutter project.</span><br><span class="line"></span><br><span class="line">dependencies:</span><br><span class="line">  flutter:</span><br><span class="line">    sdk: flutter</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  # 国际化</span><br><span class="line">  flutter_localizations:</span><br><span class="line">    sdk: flutter</span><br><span class="line">  intl:</span><br><span class="line">  intl_translation:</span><br><span class="line"></span><br><span class="line">  # The following adds the Cupertino Icons font to your application.</span><br><span class="line">  # Use <span class="keyword">with</span> the CupertinoIcons <span class="class"><span class="keyword">class</span> <span class="title">for</span> <span class="title">iOS</span> <span class="title">style</span> <span class="title">icons</span>.</span></span><br><span class="line"><span class="class">  <span class="title">cupertino_icons</span>: ^0.1.0</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">  # <span class="title">Use</span> <span class="title">an</span> <span class="title">external</span> <span class="title">package</span></span></span><br><span class="line"><span class="class">  <span class="title">english_words</span>: ^3.1.0</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">dev_dependencies</span>:</span></span><br><span class="line"><span class="class">  <span class="title">flutter_test</span>:</span></span><br><span class="line"><span class="class">    <span class="title">sdk</span>: <span class="title">flutter</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"># <span class="title">For</span> <span class="title">information</span> <span class="title">on</span> <span class="title">the</span> <span class="title">generic</span> <span class="title">Dart</span> <span class="title">part</span> <span class="title">of</span> <span class="title">this</span> <span class="title">file</span>, <span class="title">see</span> <span class="title">the</span></span></span><br><span class="line"><span class="class"># <span class="title">following</span> <span class="title">page</span>: <span class="title">https</span>://<span class="title">www</span>.<span class="title">dartlang</span>.<span class="title">org</span>/<span class="title">tools</span>/<span class="title">pub</span>/<span class="title">pubspec</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"># <span class="title">The</span> <span class="title">following</span> <span class="title">section</span> <span class="title">is</span> <span class="title">specific</span> <span class="title">to</span> <span class="title">Flutter</span>.</span></span><br><span class="line"><span class="class"><span class="title">flutter</span>:</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">  # <span class="title">The</span> <span class="title">following</span> <span class="title">line</span> <span class="title">ensures</span> <span class="title">that</span> <span class="title">the</span> <span class="title">Material</span> <span class="title">Icons</span> <span class="title">font</span> <span class="title">is</span></span></span><br><span class="line"><span class="class">  # <span class="title">included</span> <span class="title">with</span> <span class="title">your</span> <span class="title">application</span>, <span class="title">so</span> <span class="title">that</span> <span class="title">you</span> <span class="title">can</span> <span class="title">use</span> <span class="title">the</span> <span class="title">icons</span> <span class="title">in</span></span></span><br><span class="line"><span class="class">  # <span class="title">the</span> <span class="title">material</span> <span class="title">Icons</span> <span class="title">class</span>.</span></span><br><span class="line"><span class="class">  <span class="title">uses</span>-<span class="title">material</span>-<span class="title">design</span>: <span class="title">true</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">  # <span class="title">To</span> <span class="title">add</span> <span class="title">assets</span> <span class="title">to</span> <span class="title">your</span> <span class="title">application</span>, <span class="title">add</span> <span class="title">an</span> <span class="title">assets</span> <span class="title">section</span>, <span class="title">like</span> <span class="title">this</span>:</span></span><br><span class="line"><span class="class">  # <span class="title">assets</span>:</span></span><br><span class="line"><span class="class">  #  - <span class="title">images</span>/<span class="title">a_dot_burr</span>.<span class="title">jpeg</span></span></span><br><span class="line"><span class="class">  #  - <span class="title">images</span>/<span class="title">a_dot_ham</span>.<span class="title">jpeg</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">  # <span class="title">An</span> <span class="title">image</span> <span class="title">asset</span> <span class="title">can</span> <span class="title">refer</span> <span class="title">to</span> <span class="title">one</span> <span class="title">or</span> <span class="title">more</span> <span class="title">resolution</span>-<span class="title">specific</span> "<span class="title">variants</span>", <span class="title">see</span></span></span><br><span class="line"><span class="class">  # <span class="title">https</span>://<span class="title">flutter</span>.<span class="title">io</span>/<span class="title">assets</span>-<span class="title">and</span>-<span class="title">images</span>/#<span class="title">resolution</span>-<span class="title">aware</span>.</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">  # <span class="title">For</span> <span class="title">details</span> <span class="title">regarding</span> <span class="title">adding</span> <span class="title">assets</span> <span class="title">from</span> <span class="title">package</span> <span class="title">dependencies</span>, <span class="title">see</span></span></span><br><span class="line"><span class="class">  # <span class="title">https</span>://<span class="title">flutter</span>.<span class="title">io</span>/<span class="title">assets</span>-<span class="title">and</span>-<span class="title">images</span>/#<span class="title">from</span>-<span class="title">packages</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">  # <span class="title">To</span> <span class="title">add</span> <span class="title">custom</span> <span class="title">fonts</span> <span class="title">to</span> <span class="title">your</span> <span class="title">application</span>, <span class="title">add</span> <span class="title">a</span> <span class="title">fonts</span> <span class="title">section</span> <span class="title">here</span>,</span></span><br><span class="line"><span class="class">  # <span class="title">in</span> <span class="title">this</span> "<span class="title">flutter</span>" <span class="title">section</span>. <span class="title">Each</span> <span class="title">entry</span> <span class="title">in</span> <span class="title">this</span> <span class="title">list</span> <span class="title">should</span> <span class="title">have</span> <span class="title">a</span></span></span><br><span class="line"><span class="class">  # "<span class="title">family</span>" <span class="title">key</span> <span class="title">with</span> <span class="title">the</span> <span class="title">font</span> <span class="title">family</span> <span class="title">name</span>, <span class="title">and</span> <span class="title">a</span> "<span class="title">fonts</span>" <span class="title">key</span> <span class="title">with</span> <span class="title">a</span></span></span><br><span class="line"><span class="class">  # <span class="title">list</span> <span class="title">giving</span> <span class="title">the</span> <span class="title">asset</span> <span class="title">and</span> <span class="title">other</span> <span class="title">descriptors</span> <span class="title">for</span> <span class="title">the</span> <span class="title">font</span>. <span class="title">For</span></span></span><br><span class="line"><span class="class">  # <span class="title">example</span>:</span></span><br><span class="line"><span class="class">  # <span class="title">fonts</span>:</span></span><br><span class="line"><span class="class">  #   - <span class="title">family</span>: <span class="title">Schyler</span></span></span><br><span class="line"><span class="class">  #     <span class="title">fonts</span>:</span></span><br><span class="line"><span class="class">  #       - <span class="title">asset</span>: <span class="title">fonts</span>/<span class="title">Schyler</span>-<span class="title">Regular</span>.<span class="title">ttf</span></span></span><br><span class="line"><span class="class">  #       - <span class="title">asset</span>: <span class="title">fonts</span>/<span class="title">Schyler</span>-<span class="title">Italic</span>.<span class="title">ttf</span></span></span><br><span class="line"><span class="class">  #         <span class="title">style</span>: <span class="title">italic</span></span></span><br><span class="line"><span class="class">  #   - <span class="title">family</span>: <span class="title">Trajan</span> <span class="title">Pro</span></span></span><br><span class="line"><span class="class">  #     <span class="title">fonts</span>:</span></span><br><span class="line"><span class="class">  #       - <span class="title">asset</span>: <span class="title">fonts</span>/<span class="title">TrajanPro</span>.<span class="title">ttf</span></span></span><br><span class="line"><span class="class">  #       - <span class="title">asset</span>: <span class="title">fonts</span>/<span class="title">TrajanPro_Bold</span>.<span class="title">ttf</span></span></span><br><span class="line"><span class="class">  #         <span class="title">weight</span>: 700</span></span><br><span class="line"><span class="class">  #</span></span><br><span class="line"><span class="class">  # <span class="title">For</span> <span class="title">details</span> <span class="title">regarding</span> <span class="title">fonts</span> <span class="title">from</span> <span class="title">package</span> <span class="title">dependencies</span>, </span></span><br><span class="line"><span class="class">  # <span class="title">see</span> <span class="title">https</span>://<span class="title">flutter</span>.<span class="title">io</span>/<span class="title">custom</span>-<span class="title">fonts</span>/#<span class="title">from</span>-<span class="title">packages</span></span></span><br></pre></td></tr></table></figure>
+<p>源码 地址</p>
+<p><a href="https://github.com/kylinhuang/flutterDemo/blob/master/flutterdemo/lib/flutter1/flutterapp.dart" target="_blank" rel="noopener">https://github.com/kylinhuang/flutterDemo/blob/master/flutterdemo/lib/flutter1/flutterapp.dart</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/07/11/工具/shadowsocks/CentOS配置Shadowsocks/" class="pre-post btn btn-default" title="CentOS搭建VPS控制面板">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">CentOS搭建VPS控制面板</span>
+        </a>
+    
+    
+        <a href="/2018/07/11/android/Flutter/Flutter-问题/" class="next-post btn btn-default" title="Flutter-问题">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Flutter-问题</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Flutter-2-创建app"><span class="toc-text">Flutter 2.创建app</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-创建项目-运行"><span class="toc-text">1.创建项目 运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-更改-AppBar"><span class="toc-text">2 更改 AppBar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-pubspec-yaml"><span class="toc-text">3   pubspec.yaml</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

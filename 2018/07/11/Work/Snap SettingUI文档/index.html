@@ -1,0 +1,566 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="Snap">
+
+
+    <meta name="description" content="Snap 设置 UI文档Settings 主页面
+Subscription
+
+1 文字显示
+    private void showSubscriptionNewMsg() {
+    Str...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Snap Setings | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Snap Setings">
+            
+	            Snap Setings
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/Work/">Work</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Snap/">Snap</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/07/11</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="Snap-设置-UI文档"><a href="#Snap-设置-UI文档" class="headerlink" title="Snap 设置 UI文档"></a>Snap 设置 UI文档</h2><h3 id="Settings-主页面"><a href="#Settings-主页面" class="headerlink" title="Settings 主页面"></a>Settings 主页面</h3><ol>
+<li>Subscription<br><img src="http://www.blog.kylinhuang.top/zb_users/upload/2018/03/201803051428478365772.png" alt></li>
+</ol>
+<p>1 文字显示</p>
+<pre><code>    private void showSubscriptionNewMsg() {
+    String paymentPrice;
+    String paymentEndTime;
+    if (DeviceHelper.getInstance().getSettingsDevice().getIsPaymentService() &gt; 0) { //付费 项目    bottom - V   价格 - V   plan -  V
+        // plan -  V
+        mSubscription_TxtCurrentPlan.setVisibility(View.VISIBLE);
+        String result = &quot;&quot;;
+        int schemeType = DeviceHelper.getInstance().getSettingsDevice().getSchemeType();
+        switch (schemeType) {
+            case 10: //用户控制 审核显示
+                result = &quot;&quot;;//?????
+                break;
+            case 0:
+                result = &quot;Free Trial&quot;;
+                break;
+            case 1:
+                result = &quot;7-day Cloud Plan&quot;;
+                break;
+            case 2:
+                result = &quot;30-day Cloud Plan&quot;;
+                break;
+            case 3:
+                result = &quot;2-day Cloud Plan&quot;;
+                break;
+            case 4:
+                result = &quot;1-day Cloud Plan&quot;; // 4 澳洲 1天
+                break;
+            default:
+                break;
+        }
+
+        if (TextUtils.isEmpty(result)) {
+            // 不限制  影藏
+            mSubscriptionLayout.setVisibility(View.GONE);
+        } else {
+            mSubscription_TxtCurrentPlan.setText(result);
+        }
+
+        //  价格 - V
+        paymentPrice = DeviceHelper.getInstance().getSettingsDevice().getPaymentPrice() + UIUtils.getString(R.string.monthly);
+        mSubscription_TxtCurrentPlanRight.setText(paymentPrice);
+        mSubscription_TxtCurrentPlanRight.setVisibility(View.VISIBLE);
+
+        // bottom - V
+        if (DeviceHelper.getInstance().getSettingsDevice().getPaymentIsAutoRenewal() &gt; 0) { //自动续费
+            paymentEndTime = UIUtils.getString(R.string.NextRenewal) + getDate(DeviceHelper.getInstance().getSettingsDevice().getPaymentEndTime());
+        } else {
+            paymentEndTime = UIUtils.getString(R.string.Expires) + getDate(DeviceHelper.getInstance().getSettingsDevice().getPaymentEndTime());
+        }
+        mSubscription_TxtCurrentPlanBottom.setText(paymentEndTime);
+        mSubscription_TxtCurrentPlanBottom.setVisibility(View.VISIBLE);
+
+
+    } else if (DeviceHelper.getInstance().getSettingsDevice().getIsFreeTrail() &gt; 0) { //免费    bottom - Expires   价格 - Gone   plan -  Free Trial
+
+
+        // bottom - Expires
+        mSubscription_TxtCurrentPlanBottom.setText(UIUtils.getString(R.string.Expires) + getDate(DeviceHelper.getInstance().getSettingsDevice().getPaymentEndTime()));
+        mSubscription_TxtCurrentPlanBottom.setVisibility(View.VISIBLE);
+
+        // 价格
+        mSubscription_TxtCurrentPlanRight.setVisibility(View.GONE);
+
+
+        // plan -  Free Trial
+        mSubscription_TxtCurrentPlan.setText(&quot;Free Trial&quot;);
+        mSubscription_TxtCurrentPlan.setVisibility(View.VISIBLE);
+
+
+    } else { // 无可以使用  云服务   bottom - gone   价格 - 0.00   plan -  Basic cloud plan
+
+        // 价格
+        paymentPrice = &quot;0.00&quot;;
+        mSubscription_TxtCurrentPlanRight.setText(paymentPrice);
+        mSubscription_TxtCurrentPlanRight.setVisibility(View.VISIBLE);
+
+        //plan -  Basic cloud plan
+        mSubscription_TxtCurrentPlan.setText(&quot;Basic Cloud Plan&quot;);
+        mSubscription_TxtCurrentPlan.setVisibility(View.VISIBLE);
+
+        // bottom - gone
+        mSubscription_TxtCurrentPlanBottom.setVisibility(View.GONE);
+    }
+
+    mSubscription_TxtCurrentPlanRight.setText(DeviceHelper.getInstance().getSettingsDevice().getPaymentPrice() + UIUtils.getString(R.string.monthly));
+}
+</code></pre><p><img src="http://www.blog.kylinhuang.top/zb_users/upload/2018/03/201803051524221426847.png" alt></p>
+<p>Subscription 整个区域是否显示<br>需要云端配置 调用 获取 5.49 是否显示app审核敏感信息开关<br>/camera/ipc/checkIsShowSensitiveInfoOnoff.json</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">getTasketSensitiveInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Observable.create(<span class="keyword">new</span> Observable.OnSubscribe&lt;CheckIsShowSensitiveInfoOnoffResponseEntity&gt;() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Subscriber&lt;? <span class="keyword">super</span> CheckIsShowSensitiveInfoOnoffResponseEntity&gt; subscriber)</span> </span>&#123;</span><br><span class="line">            CheckIsShowSensitiveInfoOnoffRequestEntity loninEntity = <span class="keyword">new</span> CheckIsShowSensitiveInfoOnoffRequestEntity();</span><br><span class="line">            CheckIsShowSensitiveInfoOnoffResponseEntity entity = DataManager.getInstance().checkIsShowSensitiveInfoOnoff(loninEntity);</span><br><span class="line">            subscriber.onNext(entity);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).subscribeOn(Schedulers.newThread())</span><br><span class="line">        .observeOn(AndroidSchedulers.mainThread())</span><br><span class="line">        .subscribe(<span class="keyword">new</span> UIObserver&lt;CheckIsShowSensitiveInfoOnoffResponseEntity&gt;(<span class="keyword">new</span> UIGetDataCallBack&lt;CheckIsShowSensitiveInfoOnoffResponseEntity&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getDataFinish</span><span class="params">(<span class="keyword">boolean</span> isSuccess, CheckIsShowSensitiveInfoOnoffResponseEntity baseResponseEntity)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (baseResponseEntity <span class="keyword">instanceof</span> CheckIsShowSensitiveInfoOnoffResponseEntity) &#123;</span><br><span class="line">                    CheckIsShowSensitiveInfoOnoffResponseEntity entity = (CheckIsShowSensitiveInfoOnoffResponseEntity) baseResponseEntity;</span><br><span class="line">                    SensitiveInfo info = SensitiveInfo.getInstance();</span><br><span class="line"></span><br><span class="line">                    info.setIsShow(entity.getIsShow());</span><br><span class="line">                    info.setPurchaseUrl(entity.getPurchaseUrl());</span><br><span class="line"></span><br><span class="line">                    <span class="comment">//  1显示 但不可点击</span></span><br><span class="line">                    <span class="comment">//  2 可点击</span></span><br><span class="line">                    <span class="comment">//  0不显示</span></span><br><span class="line">                    <span class="keyword">if</span> (DeviceHelper.getInstance().getSettingsDevice().getSchemeType() != <span class="number">10</span>) &#123; <span class="comment">//10 直接 GONE</span></span><br><span class="line">                        <span class="keyword">if</span> (SensitiveInfo.getInstance().getIsShow() == <span class="number">1</span> &amp;&amp; !TextUtils.isEmpty(SensitiveInfo.getInstance().getPurchaseUrl())) &#123;</span><br><span class="line">                            mSubscriptionLayout.setVisibility(View.VISIBLE);</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            mSubscriptionLayout.setVisibility(View.GONE);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        mSubscriptionLayout.setVisibility(View.GONE);</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>checkIsShowSensitiveInfoOnoff<br>接口<br>重要参数<br>isShow 服务器端控制是否显示<br>purchaseUrl 点击 购买是连接</p>
+<p>SchemeType 为10 直接影藏<br>SchemeType 不为10 &gt; 判断是否显示 url 是否存在 都满足显示</p>
+<h2 id="Camera-Settings"><a href="#Camera-Settings" class="headerlink" title="Camera Settings"></a>Camera Settings</h2><p>设备 在线 显示 Camera Settings<br>设备 不在线 Camera Settings(Your snap is offline）</p>
+<p>离线状态 Camera Settings 三个设置tab不可点击</p>
+<h2 id="Lights-Settings"><a href="#Lights-Settings" class="headerlink" title="Lights Settings"></a>Lights Settings</h2><p>设备 在线 显示 Lights Settings<br>设备 不在线 Lights Settings(Your snap is offline）</p>
+<p>副标题<br>Snap V2 -  Lights turning on and off by schedule or motion detection<br>Snap V1 -  Lights turning on and off by schedule</p>
+<h2 id="share-副标题"><a href="#share-副标题" class="headerlink" title="share 副标题"></a>share 副标题</h2><p>分享 开  显示 Share to public   输入区显示<br>    关   显示 Only me   输入区不显示</p>
+<h2 id="MotionDetection"><a href="#MotionDetection" class="headerlink" title="MotionDetection"></a>MotionDetection</h2><p>Security Settings<br>过期用户    显示  Security Settings(requires a cloud service plan)<br>未过期用户   显示  Security Settings</p>
+<p>MotionDetection 开关 显示<br><img src="http://www.blog.kylinhuang.top/zb_users/upload/2018/03/201803051655414056636.png" alt></p>
+<h2 id="二级页面-MotionDetection"><a href="#二级页面-MotionDetection" class="headerlink" title="二级页面 MotionDetection"></a>二级页面 MotionDetection</h2><p><img src="http://www.blog.kylinhuang.top/zb_users/upload/2018/03/201803051606326920135.png" alt></p>
+<h2 id="1-Motion-Detection"><a href="#1-Motion-Detection" class="headerlink" title="1. Motion Detection"></a>1. Motion Detection</h2><p>关   -       下方全部影藏<br>开   -       下方全部显示</p>
+<p>Userinfo isMotionOnoff 服务器控制是否显示<br>控制 Motion Detection 按钮下方 所有控件</p>
+<h3 id="activity-Filters"><a href="#activity-Filters" class="headerlink" title="activity Filters"></a>activity Filters</h3><pre><code>if (UserInfo.getInstance().isShowObjectRecognition() == false){
+            // 影藏 Filters
+            mRoot.findViewById(R.id.SnapSettings_motion_activity_Filters).setVisibility(View.GONE);
+            mRoot.findViewById(R.id.SnapSettings_motion_activity_Filters_obj).setVisibility(View.GONE);
+        }
+</code></pre><p>UserInfo 中ServiceShow 的objectRecognition 控制 activity Filters 整个显示</p>
+<h3 id="Notification"><a href="#Notification" class="headerlink" title="Notification"></a>Notification</h3><p>Devices 中 getMotionNotificationOnoff<br>控制Notification 开关<br>当关闭是 Notification栏下方都影藏</p>
+<p>Devices 中 getNotdisturbOnoff<br>控制免打扰开关<br>当关闭是 下方的免打扰时间不显示</p>
+<p>服务器控制<br>过期 并且服务器不控制（影藏 zone 影藏 Filters）</p>
+<p>//服务器特殊控制<br>UserInfo.getInstance().isMotionOnoff()</p>
+<pre><code>int motionDetection_Status = UIHelper.getMotionDetection_Status(DeviceHelper.getInstance().getSettingsDevice());
+            if ( -1 == motionDetection_Status &amp;&amp; UserInfo.getInstance().isMotionOnoff()){//服务器特殊控制
+                mRoot.findViewById(R.id.activityCameraLiveSettings_content).setVisibility(View.VISIBLE);
+                // 影藏 zone
+                mRoot.findViewById(R.id.SnapSettings_motion_zones_text).setVisibility(View.GONE);
+                mRoot.findViewById(R.id.SnapSettings_motion_zone_layout).setVisibility(View.GONE);
+
+                // 影藏 Filters
+                mRoot.findViewById(R.id.SnapSettings_motion_activity_Filters).setVisibility(View.GONE);
+                mRoot.findViewById(R.id.SnapSettings_motion_activity_Filters_obj).setVisibility(View.GONE);
+            }
+</code></pre><h2 id="html-settings-Js-与android-IOS-交互"><a href="#html-settings-Js-与android-IOS-交互" class="headerlink" title="html settings Js 与android IOS 交互"></a>html settings Js 与android IOS 交互</h2><p>移动端加载url<br><a href="https://m3-10-100-102-21.cloud.sengled.com/mp/snap/settings.html;jsession=session?deviceId=16810" target="_blank" rel="noopener">https://m3-10-100-102-21.cloud.sengled.com/mp/snap/settings.html;jsession=session?deviceId=16810</a><br>参数<br>session<br>deviceId</p>
+<h4 id="js-调用移动端（android-IOS）"><a href="#js-调用移动端（android-IOS）" class="headerlink" title="js 调用移动端（android /IOS）"></a>js 调用移动端（android /IOS）</h4><p>1.html点击购买云服务 启动系统浏览器 打开购买页面<br>2.Setting主页面点击左上角 返回箭头 退出设置页面</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>js（调用方）</th>
+<th>android</th>
+<th>ios</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>打开购买页面</td>
+<td>jsJumpPlay(String path)</td>
+<td>JsInterfacejs.JumpPlay(String path)</td>
+<td>jsJumpPlay(path)</td>
+</tr>
+<tr>
+<td>退出设置页面</td>
+<td>jsFinishPage()</td>
+<td>JsInterfacejs.jsFinishPage()</td>
+<td>back()</td>
+</tr>
+</tbody>
+</table>
+<h4 id="移动端（android-IOS）-调用-js"><a href="#移动端（android-IOS）-调用-js" class="headerlink" title="移动端（android /IOS） 调用 js"></a>移动端（android /IOS） 调用 js</h4><p>1.android存在物理back键 调用 js返回上级页面</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>android （调用方）</th>
+<th>js</th>
+<th>ios</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理back键</td>
+<td>androidBack()</td>
+<td>androidBack()</td>
+<td>不需要处理</td>
+</tr>
+</tbody>
+</table>
+<p><code>mWebview.loadUrl(&quot;javascript:androidBack()&quot;);</code></p>
+<p>android 加载html 错误页面修改</p>
+<h2 id="Settings-html-Native-交互"><a href="#Settings-html-Native-交互" class="headerlink" title="Settings html Native 交互"></a>Settings html Native 交互</h2><div id="sequence-0"></div>
+
+
+
+ <div id="sequence-1"></div>
+
+
+
+
+<table>
+<thead>
+<tr>
+<th>JS call Native</th>
+<th>删除snap</th>
+<th>更新 titlebar</th>
+<th>离开设置页面(New)</th>
+<th>离开设置页面(old)</th>
+<th>跳转网页支付</th>
+<th>跳转网页支付(old)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>简介</td>
+<td>设置中删除设备 通知 Native 退出设置页 （1.7.0+）</td>
+<td>Titlebar 使用Native 通知 Native 更新 titlebar (1.7.0+)</td>
+<td>退出设置页 通知Native 退出设置页 (1.7.0+)</td>
+<td>退出设置页 通知Native 退出设置页 (1.5.0-1.7.0)</td>
+<td>选择购买云服务跳转网页端支付 (1.7.0+)</td>
+<td>选择购买云服务跳转网页端支付 (1.5.0-1.7.0)</td>
+</tr>
+<tr>
+<td>Js参数</td>
+<td>{“command”: “deleteSnap”,”value”:deviceId}</td>
+<td>{“command”: “updateTitle”,”value”:title}</td>
+<td>{“command”: “exitSettings”,”value”:”” , “save”: {“keppAlive”: 1,”cameraOnline”: 1,”showCameraOnButton”: 1,”snapName”: snapName }}</td>
+<td>{“keppAlive”: 1,”cameraOnline”: 1,”showCameraOnButton”: 1,”snapName”: snapName }</td>
+<td>{“command”: “openBrowser”,”value”:url}</td>
+<td>-</td>
+</tr>
+<tr>
+<td>js调用 IOS</td>
+<td>window.webkit.messageHandlers.JsInterface.postMessage(args);</td>
+<td>window.webkit.messageHandlers.JsInterface.postMessage(args);</td>
+<td>window.webkit.messageHandlers.JsInterface.postMessage(args);</td>
+<td>IOS 监听 back(args);</td>
+<td>window.webkit.messageHandlers.JsInterface.postMessage(args);</td>
+<td>IOS 监听 jsJumpPlay(url);</td>
+</tr>
+<tr>
+<td>js调用 Android</td>
+<td>JsInterface.sendCommand(args);</td>
+<td>JsInterface.sendCommand(args);</td>
+<td>JsInterface.sendCommand(args);</td>
+<td>JsInterface.jsFinishPage(args);</td>
+<td>JsInterface.sendCommand(args);</td>
+<td>JsInterface.jsJumpPlay(url);</td>
+</tr>
+</tbody>
+</table>
+<p><script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script><textarea id="sequence-0-code" style="display: none"> Title: Settings html Native 交互 version 1.5.5 (整个页面HTML)
+
+    Phone->HTML/JS: 加载页面
+    Note right of HTML/JS: 修改数据 HTML/JS自己处理
+
+    Note left of Phone: 物理back
+    Phone->HTML/JS: Phone 通知 HTML/JS - androidBack()
+    Note right of HTML/JS: HTML/JS 可以返回 自己处理返回
+    Note right of HTML/JS: HTML/JS 不能返回
+    HTML/JS->Phone: HTML/JS 通知 Phone 退出设置页面 (android-jsFinishPage(json) ) json 更新修改后的数据)
+    Note right of HTML/JS: HTML/JS 退出设置
+    HTML/JS->Phone: HTML/JS 通知 Phone 退出设置页面 (android-jsFinishPage(json) ios-back(json) json 更新修改后的数据)</textarea><textarea id="sequence-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script><textarea id="sequence-1-code" style="display: none"> Title: Settings html Native 交互 (Title为Native 内容为HTML)
+
+    Note left of Phone: 1 加载HTML/JS
+    Phone->HTML/JS: 1.1 加载页面 (设置回调对象,URL 参数jsession deviceId appVersion )
+    Note right of HTML/JS: 1.2 获取版本号 控制显示Title 显示
+    
+    
+    Note right of HTML/JS: 2 切换页面
+    HTML/JS->Phone: 2.1 切换页面 (HTML/JS 回调 Phone updateTitle)
+    
+    
+    Note left of Phone: 3 Phone back
+    Phone->HTML/JS: 3.1 Phone 通知 Html/Js back
+    Note right of HTML/JS: 3.2 HTML/JS 可以返回 自己处理返回
+    HTML/JS-->>Phone: 3.2.1切换页面 (HTML/JS 回调 Phone updateTitle)
+    Note right of HTML/JS: 3.3 HTML/JS 不能返回
+    HTML/JS->Phone: 3.3.1 HTML/JS 通知 Phone finishPage (返回json 更新修改后的数据)</textarea><textarea id="sequence-1-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-1-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-1", options);</script></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/08/07/android/Features/点击空白区域隐藏键盘/" class="pre-post btn btn-default" title="android Features 点击空白区域隐藏键盘">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">android Features 点击空白区域隐藏键盘</span>
+        </a>
+    
+    
+        <a href="/2018/07/11/工具/mysql/MySQL/" class="next-post btn btn-default" title="MySQL">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">MySQL</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Snap-设置-UI文档"><span class="toc-text">Snap 设置 UI文档</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Settings-主页面"><span class="toc-text">Settings 主页面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Camera-Settings"><span class="toc-text">Camera Settings</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lights-Settings"><span class="toc-text">Lights Settings</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#share-副标题"><span class="toc-text">share 副标题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MotionDetection"><span class="toc-text">MotionDetection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二级页面-MotionDetection"><span class="toc-text">二级页面 MotionDetection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Motion-Detection"><span class="toc-text">1. Motion Detection</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#activity-Filters"><span class="toc-text">activity Filters</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Notification"><span class="toc-text">Notification</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html-settings-Js-与android-IOS-交互"><span class="toc-text">html settings Js 与android IOS 交互</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#js-调用移动端（android-IOS）"><span class="toc-text">js 调用移动端（android /IOS）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#移动端（android-IOS）-调用-js"><span class="toc-text">移动端（android /IOS） 调用 js</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Settings-html-Native-交互"><span class="toc-text">Settings html Native 交互</span></a></li>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
