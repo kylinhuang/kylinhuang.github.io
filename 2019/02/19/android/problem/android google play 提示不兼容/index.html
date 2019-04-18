@@ -19,17 +19,12 @@
     <meta name="keywords" content="problem">
 
 
-    <meta name="description" content="最近 要发布版本 遇到一个问题
+    <meta name="description" content="google play 提示不兼容最近 要发布版本 遇到一个问题
 部分pad 提示 
 1您的设备 与此版本不兼容
 
-问题分析
-参考
-核实问题上传版本 到google play bate渠道(不要发布) 查看警告
-
-
-支持情况
-原...">
+一 问题分析参考
+核实问题上传版本 到google play bate渠道(不...">
 
 
 
@@ -192,25 +187,43 @@
     </div>
     
     <div class="post-body post-content">
-        <p>最近 要发布版本 遇到一个问题</p>
+        <h1 id="google-play-提示不兼容"><a href="#google-play-提示不兼容" class="headerlink" title="google play 提示不兼容"></a>google play 提示不兼容</h1><p>最近 要发布版本 遇到一个问题</p>
 <p>部分pad 提示 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">您的设备 与此版本不兼容</span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/kylinhuang/img/raw/master/blog/snap/68DFE49E5AD9966CB59C837DD799D5A6.jpg" alt="68DFE49E5AD9966CB59C837DD799D5A6"></p>
-<p>问题分析</p>
-<p><a href="https://blog.csdn.net/robin_java/article/details/52728555" target="_blank" rel="noopener">参考</a></p>
+<p><img src="/images/problem/68DFE49E5AD9966CB59C837DD799D5A6.jpg" alt="68DFE49E5AD9966CB59C837DD799D5A6"></p>
+<h2 id="一-问题分析"><a href="#一-问题分析" class="headerlink" title="一 问题分析"></a>一 问题分析</h2><p><a href="https://blog.csdn.net/robin_java/article/details/52728555" target="_blank" rel="noopener">参考</a></p>
 <p>核实问题<br>上传版本 到google play bate渠道(不要发布) 查看警告</p>
-<p><img src="https://github.com/kylinhuang/img/raw/master/blog/snap/1550456738359.jpg" alt="1550456738359"></p>
-<p><img src="https://github.com/kylinhuang/img/raw/master/blog/snap/E0D6ADDB-CBEB-4644-958F-501E22E1E9B1.png" alt="E0D6ADDB-CBEB-4644-958F-501E22E1E9B1"></p>
-<p>支持情况<br><img src="https://github.com/kylinhuang/img/raw/master/blog/snap/D38594112A714BDBE0D3F2A6F720CB59.png" alt="D38594112A714BDBE0D3F2A6F720CB59"></p>
-<p>原因<br>相机权限 和 定位权限导致的</p>
-<p>解决方案</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-feature android:name=&quot;android.hardware.location.gps&quot; android:required=&quot;false&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;uses-feature android:name=&quot;android.hardware.camera&quot; android:required=&quot;false&quot;/&gt;</span><br><span class="line">&lt;uses-feature android:name=&quot;android.hardware.camera.autofocus&quot; android:required=&quot;false&quot;/&gt;</span><br></pre></td></tr></table></figure>
-<p>验证结果<br>上传新APP 到google play bate渠道（不要发布）</p>
+<p><img src="/images/problem/1550456738359.jpg" alt="1550456738359"></p>
+<p><img src="/images/problem/E0D6ADDB-CBEB-4644-958F-501E22E1E9B1.png" alt="E0D6ADDB-CBEB-4644-958F-501E22E1E9B1"></p>
+<p>支持情况<br><img src="/images/problem/D38594112A714BDBE0D3F2A6F720CB59.png" alt="D38594112A714BDBE0D3F2A6F720CB59"></p>
+<h2 id="二-问题原因"><a href="#二-问题原因" class="headerlink" title="二 问题原因"></a>二 问题原因</h2><p>相机权限 和 定位权限导致的</p>
+<h2 id="三-解决方案"><a href="#三-解决方案" class="headerlink" title="三 解决方案"></a>三 解决方案</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-feature android:name=&quot;android.hardware.location.gps&quot; android:required=&quot;false&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;uses-feature android:name=&quot;android.hardware.camera&quot; android:required=&quot;false&quot;/&gt;</span><br><span class="line">&lt;uses-feature android:name=&quot;android.hardware.camera.autofocus&quot; android:required=&quot;false&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="四-验证结果"><a href="#四-验证结果" class="headerlink" title="四 验证结果"></a>四 验证结果</h2><p>上传新APP 到google play bate渠道（不要发布）</p>
 <p>查看兼容情况</p>
-<p><img src="https://github.com/kylinhuang/img/raw/master/blog/snap/8CB11679D05B51957A11E7C145FB85F8.png" alt="8CB11679D05B51957A11E7C145FB85F8"></p>
+<p><img src="/images/problem/8CB11679D05B51957A11E7C145FB85F8.png" alt="8CB11679D05B51957A11E7C145FB85F8"></p>
 <p>OK</p>
 
     </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="../img/ali_pay.jpg"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="../img/wx_pay.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">打赏</p>
+</div>
+
+
     
     <div class="post-footer">
         <div>
@@ -277,7 +290,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <p>暂无目录</p>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#google-play-提示不兼容"><span class="toc-text">google play 提示不兼容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-问题分析"><span class="toc-text">一 问题分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-问题原因"><span class="toc-text">二 问题原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-解决方案"><span class="toc-text">三 解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-验证结果"><span class="toc-text">四 验证结果</span></a></li></ol></li></ol>
         
     </div>
 </aside>
