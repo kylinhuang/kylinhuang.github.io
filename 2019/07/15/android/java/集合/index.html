@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="集合">
+
+
+    <meta name="description" content="集合
+类型：List, Set, Map，都是接口而非具体实现。
+1. List  - 排列有序，可重复，允许多个NULL特点是有序并且按线性方式存储，可以根据元素的下标进行精准的控制。
+
+Ar...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>集合 | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/android/"><i class="fa "></i>android</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Flutter/"><i class="fa "></i>flutter</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="集合">
+            
+	            集合
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/java/">java</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/集合/">集合</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/15</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p><img src="/images/java/collection.png" alt="collection"></p>
+<p>类型：List, Set, Map，都是接口而非具体实现。</p>
+<h2 id="1-List-排列有序，可重复，允许多个NULL"><a href="#1-List-排列有序，可重复，允许多个NULL" class="headerlink" title="1. List  - 排列有序，可重复，允许多个NULL"></a>1. List  - 排列有序，可重复，允许多个NULL</h2><pre><code>特点是有序并且按线性方式存储，可以根据元素的下标进行精准的控制。
+</code></pre><ol>
+<li>ArrayList  是顺序表的体现，底层用数组实现。</li>
+</ol>
+<p>基于动态 数组实现，<br>读取速度快，增删慢；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">数组在线性表中的分类属于顺序表，</span><br><span class="line"></span><br><span class="line">即：顺序表中的数据元素存储是连续的，内存划分的区域也是连续的。</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>LinkedList 是链表的体现，使用双向链表实现。（链表的三种形式：单向链表、双向链表、循环链表）</li>
+</ol>
+<p>基于双向链表实现，只能顺序访问，</p>
+<p>所以查询速度慢，但插入和删除元素快。</p>
+<p>不仅如此，LinkedList 还可以用作栈、队列和双向队列。（JDK1.6之前为循环链表，JDK1.7取消了循环）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">链表在物理存储上通常是非连续、非顺序的方式存储的，</span><br><span class="line"></span><br><span class="line">但是数据元素的逻辑顺序是连续的，实现方式是通过链表中的引用来实现。</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>Stack 是 Vector 的子类，而Vector实现了List<e>接口；是栈结构的代表。</e></li>
+</ol>
+<p>和 ArrayList 类似，但它是线程安全的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">栈和队列是特殊的线性表，或者说是受到限制的线性表，</span><br><span class="line"></span><br><span class="line">其限制是仅允许在线性表的尾部进行添加和删除操作，</span><br><span class="line"></span><br><span class="line">这一端被称为栈顶，另一端称为栈底。</span><br></pre></td></tr></table></figure>
+<h2 id="2-Queue-先进先出"><a href="#2-Queue-先进先出" class="headerlink" title="2. Queue - 先进先出"></a>2. Queue - 先进先出</h2><pre><code>队列Queue直接继承自Collection接口，是队列结构的代表，使用链表结构实现。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Queue接口是队列的体现，在实现上是基于链表实现的，具体的实现类是LinkindList，</span><br><span class="line"></span><br><span class="line">也就是说，java通过Queue接口收窄了LinkedList的访问权限，</span><br><span class="line"></span><br><span class="line">只提供从队尾，队头等的操作，从而实现了对列。</span><br></pre></td></tr></table></figure>
+<p>（注：Queue继承自Collection接口，而LinkedList实现了Deque接口，Deque接口继承自Queue接口，即实现了Queue接口的所有方法）</p>
+<p>Queue接口的主要方法：<br>add, offer（添加元素）,<br>poll（返回并删除队列头部元素）。<br>根据offer()方法的官方注解，更加推荐使用offer()方法：</p>
+<ul>
+<li>LinkedList：可以用它来实现双向队列。</li>
+<li>PriorityQueue：基于堆结构实现，可以用它来实现优先队列。</li>
+</ul>
+<h2 id="3-Set-唯一，不重复"><a href="#3-Set-唯一，不重复" class="headerlink" title="3. Set - 唯一，不重复"></a>3. Set - 唯一，不重复</h2><p>直接继承自 Collection 接口，HashSet 内部使用HashMap实现；<br>特点是无序但是不包含重复的元素；<br>元素存放方式为散列存放，即通过计算hash值存放元素。</p>
+<ul>
+<li>HashSet：<strong>（无序，唯一）</strong>基于哈希表实现、无序，值允许为 null ，查找的时间复杂度为 O(logN)</li>
+<li>TreeSet：<strong>（有序，唯一）</strong>基于红黑树实现、自然序，值不为 null 值，查找的时间复杂度为 O(1)</li>
+<li>LinkedHashSet：具有 HashSet特性，增加双向链表维持元素的顺序，有序(插入顺序)</li>
+</ul>
+<h2 id="4-Map-键值对存储，键名唯一，键值可重复"><a href="#4-Map-键值对存储，键名唯一，键值可重复" class="headerlink" title="4. Map - 键值对存储，键名唯一，键值可重复"></a>4. Map - 键值对存储，键名唯一，键值可重复</h2><p>Map单独为一个接口，<br>HashMap 是基于哈希表的对Map接口的实现，<br>而哈希表的底层数据结构是数组和链表；</p>
+<p>特点是能够根据 key快速查找value；<br>键必须唯一，<br>put一个键相同的值时该键会被更新，<br>即同一个键只能映射到一个值。<br>键值对以Entry类型的对象实例存在（注：Entry是Map接口中定义的内部接口）</p>
+<ul>
+<li>HashMap：基于哈希表实现。底层用数组+单向链表（1.8增加了黑红树）存储。无序，键名唯一，可为空；键值可重复，可为 null</li>
+<li>TreeMap：基于红黑树实现。自然序，键值键名都不能为 NULL。</li>
+<li>LinkedHashMap：拥有 HashMap 的所有特性，增加了双向链表维持元素的顺序，有序(插入顺序)</li>
+</ul>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/ali_pay.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/wx_pay.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">打赏</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/07/15/android/java/集合深入分析/" class="pre-post btn btn-default" title="集合 深入分析">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">集合 深入分析</span>
+        </a>
+    
+    
+        <a href="/2019/07/15/android/java/Java基础/" class="next-post btn btn-default" title="Java基础">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Java基础</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#集合"><span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-List-排列有序，可重复，允许多个NULL"><span class="toc-text">1. List  - 排列有序，可重复，允许多个NULL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Queue-先进先出"><span class="toc-text">2. Queue - 先进先出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Set-唯一，不重复"><span class="toc-text">3. Set - 唯一，不重复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Map-键值对存储，键名唯一，键值可重复"><span class="toc-text">4. Map - 键值对存储，键名唯一，键值可重复</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

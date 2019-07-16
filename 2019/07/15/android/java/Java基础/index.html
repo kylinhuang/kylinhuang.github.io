@@ -1,0 +1,459 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="Java基础">
+
+
+    <meta name="description" content="JAVA基础1. Java 基本数据类型Java内置8种基本类型 -&gt; 6种数字类型 -&gt; 4种整数类型: byte, short, int, long
+
+
+
+类型
+位数
+最小值
+最...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Java基础 | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/android/"><i class="fa "></i>android</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Flutter/"><i class="fa "></i>flutter</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Java基础">
+            
+	            Java基础
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/java/">java</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Java基础/">Java基础</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/15</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="JAVA基础"><a href="#JAVA基础" class="headerlink" title="JAVA基础"></a>JAVA基础</h1><h2 id="1-Java-基本数据类型"><a href="#1-Java-基本数据类型" class="headerlink" title="1. Java 基本数据类型"></a>1. Java 基本数据类型</h2><p>Java内置8种基本类型 -&gt; 6种数字类型 -&gt; 4种整数类型: byte, short, int, long</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th style="text-align:left">位数</th>
+<th style="text-align:left">最小值</th>
+<th style="text-align:left">最大值</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">其他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">-128(-2^7)</td>
+<td style="text-align:left">127(2^7-1)</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">有符号、二进制补码表示</td>
+<td></td>
+</tr>
+<tr>
+<td>short</td>
+<td style="text-align:left">16</td>
+<td style="text-align:left">-32768(-2^15)</td>
+<td style="text-align:left">32767(2^15-1)</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">有符号、二进制补码表示</td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td style="text-align:left">32</td>
+<td style="text-align:left">-2^31</td>
+<td style="text-align:left">2^31-1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">有符号、二进制补码表示</td>
+<td></td>
+</tr>
+<tr>
+<td>long</td>
+<td style="text-align:left">64</td>
+<td style="text-align:left">-2^63</td>
+<td style="text-align:left">2^63-1</td>
+<td style="text-align:left">0L(0l)</td>
+<td style="text-align:left">有符号、二进制补码表示</td>
+<td></td>
+</tr>
+<tr>
+<td>float</td>
+<td style="text-align:left">32</td>
+<td style="text-align:left">2^(-149)</td>
+<td style="text-align:left">2^128-1</td>
+<td style="text-align:left">0.0f</td>
+<td style="text-align:left">单精度、IEEE754标准</td>
+<td></td>
+</tr>
+<tr>
+<td>double</td>
+<td style="text-align:left">64</td>
+<td style="text-align:left">2^(-1074)</td>
+<td style="text-align:left">2^1024-1</td>
+<td style="text-align:left">0.0d</td>
+<td style="text-align:left">双精度、IEEE754标准</td>
+<td></td>
+</tr>
+<tr>
+<td>char</td>
+<td style="text-align:left">16</td>
+<td style="text-align:left">\u0000(0)</td>
+<td style="text-align:left">\uffff(65535)</td>
+<td style="text-align:left">\u0000(0)</td>
+<td style="text-align:left">单一的、Unicode字符</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-浮点数内存结构"><a href="#2-浮点数内存结构" class="headerlink" title="2. 浮点数内存结构"></a>2. 浮点数内存结构</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th style="text-align:left">位数</th>
+<th style="text-align:left">符号位</th>
+<th style="text-align:left">指数位</th>
+<th style="text-align:left">尾数位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>float</td>
+<td style="text-align:left">32</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">23</td>
+<td></td>
+</tr>
+<tr>
+<td>double</td>
+<td style="text-align:left">64</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">11</td>
+<td style="text-align:left">52</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-数组"><a href="#3-数组" class="headerlink" title="3. 数组"></a>3. 数组</h2><p>数组创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int[] arr1 = &#123;1,2,3,4&#125;;             //正确</span><br><span class="line">int[] arr2 = new int[4];            //正确</span><br><span class="line">int[] arr3 = new int[]&#123;1,2,3,4&#125;;    //正确</span><br><span class="line">int[] arr4 = new int[4]&#123;1,2,3,4&#125;;s  //错误，编译不通过</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>数组的指针问题</p>
+<p> 拷贝数组时候注意</p>
+</li>
+</ol>
+<h2 id="4-String"><a href="#4-String" class="headerlink" title="4. String"></a>4. String</h2><p>数组创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s1=&quot;ss&quot;;                 //先将&quot;ss&quot;存储在池中，然后返回引用</span><br><span class="line">String s2=new String(&quot;ss&quot;);     //创建新对象,使用的&quot;ss&quot;已经在池中</span><br><span class="line">String s3=&quot;Prog&quot;+&quot;gramming&quot;;    //创建3个对象，均存储在池中</span><br></pre></td></tr></table></figure>
+<ol>
+<li>比较  == 和equlse()区别</li>
+<li>创建方式 不同 </li>
+</ol>
+<h2 id="5-StringBuilder-StringBuffer"><a href="#5-StringBuilder-StringBuffer" class="headerlink" title="5. StringBuilder/StringBuffer"></a>5. StringBuilder/StringBuffer</h2><ol>
+<li>StringBuilder线程不安全，但效率高；</li>
+<li>StringBuffer线程安全，但效率低。</li>
+</ol>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/ali_pay.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/wx_pay.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">打赏</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/07/15/android/java/集合/" class="pre-post btn btn-default" title="集合">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">集合</span>
+        </a>
+    
+    
+        <a href="/2019/07/15/android/android/" class="next-post btn btn-default" title="android 技术整理">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">android 技术整理</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JAVA基础"><span class="toc-text">JAVA基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Java-基本数据类型"><span class="toc-text">1. Java 基本数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-浮点数内存结构"><span class="toc-text">2. 浮点数内存结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-数组"><span class="toc-text">3. 数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-String"><span class="toc-text">4. String</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-StringBuilder-StringBuffer"><span class="toc-text">5. StringBuilder/StringBuffer</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
