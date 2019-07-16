@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="Flutter">
+
+
+    <meta name="description" content="android Flutter 8.数据存储-File为了将文件保存到磁盘，我们需要将 path_provider 插件与dart:io 库结合起来 。
+
+1.找到正确的本地路径
+2.创建对文件...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>android Flutter 8.数据存储-File | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/android/"><i class="fa "></i>android</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Flutter/"><i class="fa "></i>flutter</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="android Flutter 8.数据存储-File">
+            
+	            android Flutter 8.数据存储-File
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/Flutter/">Flutter</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Flutter/">Flutter</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/07/05</span>
+        </span>
+        
+    
+</div>
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>375</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="android-Flutter-8-数据存储-File"><a href="#android-Flutter-8-数据存储-File" class="headerlink" title="android Flutter 8.数据存储-File"></a>android Flutter 8.数据存储-File</h1><p>为了将文件保存到磁盘，我们需要将 path_provider 插件与dart:io 库结合起来 。</p>
+<ul>
+<li>1.找到正确的本地路径</li>
+<li>2.创建对文件位置的引用</li>
+<li>3.将数据写入文件</li>
+<li>4.从文件中读取数据</li>
+</ul>
+<h3 id="1-找到正确的本地路径"><a href="#1-找到正确的本地路径" class="headerlink" title="1.找到正确的本地路径"></a>1.找到正确的本地路径</h3><p>path_provider插件提供了一种平台不可知的方式来访问设备文件系统上的常用位置。该插件当前支持访问两个文件系统位置：</p>
+<p>临时目录(Temporary directory)：系统可随时清除的临时目录（缓存）。<br>在iOS上，这对应于NSTemporaryDirectory() 返回的值 。<br>在Android上，这是getCacheDir() 返回的值。</p>
+<p>文档目录(Documents directory)：应用程序的目录，用于存储只有它可以访问的文件。只有当应用程序被删除时，系统才会清除目录。<br>在iOS上，这对应于NSDocumentDirectory。<br>在Android上，这是  AppData目录。</p>
+<p>在我们的例子中，我们希望将信息存储在文档目录中！我们可以像这样找到文档目录的路径：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;<span class="built_in">String</span>&gt; <span class="keyword">get</span> _localPath <span class="keyword">async</span> &#123;</span><br><span class="line">  <span class="keyword">final</span> directory = <span class="keyword">await</span> getApplicationDocumentsDirectory();</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> directory.path;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-创建对文件位置的引用"><a href="#2-创建对文件位置的引用" class="headerlink" title="2.创建对文件位置的引用"></a>2.创建对文件位置的引用</h3><p>一旦我们知道在哪里存储文件，我们需要创建一个文件的完整位置的引用。我们可以使用File 类从 dart:io  库来实现这一目标。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;File&gt; get _localFile async &#123;</span><br><span class="line">  final path = await _localPath;</span><br><span class="line">  return new File(&apos;$path/counter.txt&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-将数据写入文件"><a href="#3-将数据写入文件" class="headerlink" title="3.将数据写入文件"></a>3.将数据写入文件</h3><p>现在我们有了一个File合作关系，我们可以使用它来读取和写入数据！首先，我们将一些数据写入文件。由于我们正在使用计数器，因此我们只会将整数存储为字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;File&gt; writeCounter(int counter) async &#123;</span><br><span class="line">  final file = await _localFile;</span><br><span class="line">  </span><br><span class="line">  // Write the file</span><br><span class="line">  return file.writeAsString(&apos;$counter&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-从文件中读取数据"><a href="#4-从文件中读取数据" class="headerlink" title="4.从文件中读取数据"></a>4.从文件中读取数据</h3><p>现在我们在磁盘上有一些数据，我们可以阅读它！我们再次使用这个  File类来做到这一点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;int&gt; readCounter() async &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    final file = await _localFile;</span><br><span class="line"></span><br><span class="line">    // Read the file</span><br><span class="line">    String contents = await file.readAsString();</span><br><span class="line"></span><br><span class="line">    return int.parse(contents);</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    // If we encounter an error, return 0</span><br><span class="line">    return 0;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>为了测试与文件交互的代码，我们需要模拟调用MethodChannel。这MethodChannel是Flutter用来与主机平台进行通信的类。</p>
+<p>在我们的测试中，我们无法与设备上的文件系统进行交互。我们需要与我们的测试环境的文件系统进行交互！</p>
+<p>为了模拟方法调用，我们可以setupAll在我们的测试文件中提供一个函数。该功能将在测试执行之前运行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">setUpAll(() async &#123;</span><br><span class="line">  // Create a temporary directory to work with</span><br><span class="line">  final directory = await Directory.systemTemp.createTemp();</span><br><span class="line">  </span><br><span class="line">  // Mock out the MethodChannel for the path_provider plugin</span><br><span class="line">  const MethodChannel(&apos;plugins.flutter.io/path_provider&apos;)</span><br><span class="line">      .setMockMethodCallHandler((MethodCall methodCall) async &#123;</span><br><span class="line">    // If we&apos;re getting the apps documents directory, return the path to the</span><br><span class="line">    // temp directory on our test environment instead.</span><br><span class="line">    if (methodCall.method == &apos;getApplicationDocumentsDirectory&apos;) &#123;</span><br><span class="line">      return directory.path;</span><br><span class="line">    &#125;</span><br><span class="line">    return null;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">import &apos;dart:async&apos;;</span><br><span class="line">import &apos;dart:io&apos;;</span><br><span class="line"></span><br><span class="line">import &apos;package:flutter/foundation.dart&apos;;</span><br><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line">import &apos;package:path_provider/path_provider.dart&apos;;</span><br><span class="line"></span><br><span class="line">void main() &#123;</span><br><span class="line">  runApp(</span><br><span class="line">    new MaterialApp(</span><br><span class="line">      title: &apos;Reading and Writing Files&apos;,</span><br><span class="line">      home: new FlutterDemo(storage: new CounterStorage()),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class CounterStorage &#123;</span><br><span class="line">  Future&lt;String&gt; get _localPath async &#123;</span><br><span class="line">    final directory = await getApplicationDocumentsDirectory();</span><br><span class="line"></span><br><span class="line">    return directory.path;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Future&lt;File&gt; get _localFile async &#123;</span><br><span class="line">    final path = await _localPath;</span><br><span class="line">    return new File(&apos;$path/counter.txt&apos;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Future&lt;int&gt; readCounter() async &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">      final file = await _localFile;</span><br><span class="line"></span><br><span class="line">      // Read the file</span><br><span class="line">      String contents = await file.readAsString();</span><br><span class="line"></span><br><span class="line">      return int.parse(contents);</span><br><span class="line">    &#125; catch (e) &#123;</span><br><span class="line">      // If we encounter an error, return 0</span><br><span class="line">      return 0;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Future&lt;File&gt; writeCounter(int counter) async &#123;</span><br><span class="line">    final file = await _localFile;</span><br><span class="line"></span><br><span class="line">    // Write the file</span><br><span class="line">    return file.writeAsString(&apos;$counter&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class FlutterDemo extends StatefulWidget &#123;</span><br><span class="line">  final CounterStorage storage;</span><br><span class="line"></span><br><span class="line">  FlutterDemo(&#123;Key key, @required this.storage&#125;) : super(key: key);</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  _FlutterDemoState createState() =&gt; new _FlutterDemoState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _FlutterDemoState extends State&lt;FlutterDemo&gt; &#123;</span><br><span class="line">  int _counter;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  void initState() &#123;</span><br><span class="line">    super.initState();</span><br><span class="line">    widget.storage.readCounter().then((int value) &#123;</span><br><span class="line">      setState(() &#123;</span><br><span class="line">        _counter = value;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Future&lt;File&gt; _incrementCounter() async &#123;</span><br><span class="line">    setState(() &#123;</span><br><span class="line">      _counter++;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    // write the variable as a string to the file</span><br><span class="line">    return widget.storage.writeCounter(_counter);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return new Scaffold(</span><br><span class="line">      appBar: new AppBar(title: new Text(&apos;Reading and Writing Files&apos;)),</span><br><span class="line">      body: new Center(</span><br><span class="line">        child: new Text(</span><br><span class="line">          &apos;Button tapped $_counter time$&#123;_counter == 1 ? &apos;&apos; : &apos;s&apos;&#125;.&apos;,</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">      floatingActionButton: new FloatingActionButton(</span><br><span class="line">        onPressed: _incrementCounter,</span><br><span class="line">        tooltip: &apos;Increment&apos;,</span><br><span class="line">        child: new Icon(Icons.add),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/ali_pay.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/wx_pay.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">打赏</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/android/Flutter/Flutter 9.app错误上报/" class="pre-post btn btn-default" title="android Flutter 9.app错误上报">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">android Flutter 9.app错误上报</span>
+        </a>
+    
+    
+        <a href="/android/Flutter/Flutter 7.数据存储-shared_preferences/" class="next-post btn btn-default" title="android Flutter 7.数据存储-shared_preferences">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">android Flutter 7.数据存储-shared_preferences</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#android-Flutter-8-数据存储-File"><span class="toc-text">android Flutter 8.数据存储-File</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-找到正确的本地路径"><span class="toc-text">1.找到正确的本地路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-创建对文件位置的引用"><span class="toc-text">2.创建对文件位置的引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-将数据写入文件"><span class="toc-text">3.将数据写入文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-从文件中读取数据"><span class="toc-text">4.从文件中读取数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试"><span class="toc-text">测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子"><span class="toc-text">例子</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

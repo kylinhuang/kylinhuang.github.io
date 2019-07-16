@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="MySQL">
+
+
+    <meta name="description" content="MySQLMySQL 安装 基本设置1.mac 下载mySQL 下载地址2.mac 安装启动下一步安装 （安装完成记住初始化密码）安装完成在偏好设置 中 选择MySQL启动
+3.连接数据库
+12...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>MySQL | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/android/"><i class="fa "></i>android</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Flutter/"><i class="fa "></i>flutter</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="MySQL">
+            
+	            MySQL
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/工具/">工具</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/MySQL/">MySQL</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/07/11</span>
+        </span>
+        
+    
+</div>
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>370</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h3 id="MySQL-安装-基本设置"><a href="#MySQL-安装-基本设置" class="headerlink" title="MySQL 安装 基本设置"></a>MySQL 安装 基本设置</h3><p>1.mac 下载<br><a href="https://dev.mysql.com/downloads/file/?id=475582" title="mySQL 下载地址" target="_blank" rel="noopener">mySQL 下载地址</a><br>2.mac 安装启动<br>下一步安装 （安装完成记住初始化密码）<br>安装完成在偏好设置 中 选择MySQL启动</p>
+<p>3.连接数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br><span class="line">按照提示输入密码 第一次输入初始化密码</span><br></pre></td></tr></table></figure>
+<p>4.密码重新设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;kylinhuang&apos;;</span><br><span class="line"></span><br><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;Kylinhuang=1029755440&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="MySQL-基本语法"><a href="#MySQL-基本语法" class="headerlink" title="MySQL 基本语法"></a>MySQL 基本语法</h3><h4 id="1-数据库操作"><a href="#1-数据库操作" class="headerlink" title="1.数据库操作"></a>1.数据库操作</h4><p>1.1 显示 所有数据库</p>
+<p><code>SHOW DATABASES;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW DATABASES;</span><br><span class="line">+--------------------+</span><br><span class="line">| Database           |</span><br><span class="line">+--------------------+</span><br><span class="line">| information_schema |</span><br><span class="line">| mysql              |</span><br><span class="line">| performance_schema |</span><br><span class="line">| sys                |</span><br><span class="line">| uesr               |</span><br><span class="line">+--------------------+</span><br><span class="line">5 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<p>1.2 创建数据库</p>
+<p><code>CREATE DATABASE 库名;</code></p>
+<p>1.3 切换数据库</p>
+<p><code>USE 库名;</code></p>
+<p>1.4 删除数据库</p>
+<p><code>DROP DATABASE 库名;</code><br>1.5 修改数据库名<br><a href="http://blog.csdn.net/y1366925106/article/details/50804375" title="修改数据库三种方法" target="_blank" rel="noopener">修改数据库三种方法</a></p>
+<h4 id="2-表操作"><a href="#2-表操作" class="headerlink" title="2.表操作"></a>2.表操作</h4><p>1.显示 当前数据库下所有表</p>
+<p><code>show tables;</code><br>1.创建表</p>
+<p><code>CREATE TABLE 表名 (字段名 VARCHAR(20), 字段名 CHAR(1));</code></p>
+<p>2.显示 表数据详情</p>
+<p><code>desc 表名;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; desc uesr;</span><br><span class="line">+-------+-------------+------+-----+---------+-------+</span><br><span class="line">| Field | Type        | Null | Key | Default | Extra |</span><br><span class="line">+-------+-------------+------+-----+---------+-------+</span><br><span class="line">| id    | varchar(20) | YES  |     | NULL    |       |</span><br><span class="line">| name  | char(1)     | YES  |     | NULL    |       |</span><br><span class="line">+-------+-------------+------+-----+---------+-------+</span><br><span class="line">2 rows in set (0.01 sec)</span><br></pre></td></tr></table></figure>
+<p>3.删除<br>3.1删除表<br><code>drop table 表名;</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table workmates;</span><br></pre></td></tr></table></figure></p>
+<p>3.2 删除表中的数据<br><code>delete from 表名称 where 删除条件;</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">删除id为2的行:</span><br><span class="line">delete from students where id=2;</span><br><span class="line"></span><br><span class="line">删除所有年龄小于21岁的数据:</span><br><span class="line">delete from students where age&lt;20;</span><br><span class="line"></span><br><span class="line">删除表中的所有数据:</span><br><span class="line">delete from students;</span><br></pre></td></tr></table></figure></p>
+<p>4.修改表<br>4.1修改表名<br><code>alter table 表名 rename 新表名;</code><br>4.2删除列<br><code>alter table 表名 drop 列名称;</code><br>4.3修改列名<br><code>alter table 表名 change 列名称 列新名称 新数据类型;</code><br>4.4 修改 表中的数据<br><code>update 表名称 set 列名称=新值 where 更新条件;</code></p>
+<p><code>UPDATE table_name SET field1=new-value1, field2=new-value2 [WHERE Clause]</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">将id为5的手机号改为默认的&quot;-&quot;:</span><br><span class="line">update students set tel=default where id=5;</span><br><span class="line"></span><br><span class="line">将所有人的年龄增加1:</span><br><span class="line">update students set age=age+1;</span><br><span class="line"></span><br><span class="line">将手机号为 13288097888 的姓名改为 &quot;张伟鹏&quot;, 年龄改为 19:</span><br><span class="line">update students set name=&quot;张伟鹏&quot;, age=19 where tel=&quot;13288097888&quot;;</span><br></pre></td></tr></table></figure>
+<p>5.查询<br><code>select 列名称 from 表名称 [查询条件];</code><br>也可以使用通配符 * 查询表中所有的内容, 语句:</p>
+<p><code>select * from students;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select name, age from students;</span><br><span class="line">    +--------+-----+</span><br><span class="line">    | name   | age |</span><br><span class="line">    +--------+-----+</span><br><span class="line">    | 王刚   |  20 |</span><br><span class="line">    | 孙丽华 |  21 |</span><br><span class="line">    | 王永恒 |  23 |</span><br><span class="line">    | 郑俊杰 |  19 |</span><br><span class="line">    | 陈芳   |  22 |</span><br><span class="line">    | 张伟朋 |  21 |</span><br><span class="line">    +--------+-----+</span><br><span class="line">    6 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<p>5.1 where条件查询<br><code>select 列名称 from 表名称 where 条件;</code><br><code>select * from students where sex=&quot;女&quot;;</code></p>
+<p>where 子句不仅仅支持 “where 列名 = 值” 这种名等于值的查询形式, 对一般的比较运算的运算符都是支持的, 例如 =、&gt;、&lt;、&gt;=、&lt;、!= 以及一些扩展运算符 is [not] null、in、like 等等。 还可以对查询条件使用 or 和 and 进行组合查询, 以后还会学到更加高级的条件查询方式, 这里不再多做介绍。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">查询年龄在21岁以上的所有人信息:</span><br><span class="line">select * from students where age &gt; 21;</span><br><span class="line"></span><br><span class="line">查询名字中带有 &quot;王&quot; 字的所有人信息:</span><br><span class="line">select * from students where name like &quot;%王%&quot;;</span><br><span class="line"></span><br><span class="line">查询id小于5且年龄大于20的所有人信息:</span><br><span class="line">select * from students where id&lt;5 and age&gt;20;</span><br></pre></td></tr></table></figure></p>
+<p>5.2 where条件查询 WHERE…LIKE<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT field1, field2,...fieldN table_name1, table_name2...</span><br><span class="line">WHERE field1 LIKE condition1 [AND [OR]] filed2 = &apos;somevalue&apos;</span><br></pre></td></tr></table></figure></p>
+<p>LIKE 通常与 % 一同使用，类似于一个元字符的搜索。<br>你可以使用AND或者OR指定一个或多个条件。<br>你可以在 DELETE 或 UPDATE 命令中使用 WHERE…LIKE 子句来指定条件。</p>
+<p>runoob_tbl表中获取runoob_author字段中以”jay”为结尾的的所有记录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * from runoob_tbl  WHERE runoob_author LIKE &apos;%jay&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>5.3 ORDER BY<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT field1, field2,...fieldN table_name1, table_name2...</span><br><span class="line">ORDER BY field1, [field2...] [ASC [DESC]]</span><br></pre></td></tr></table></figure></p>
+<p>ASC 升序<br>DESC 降序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * from runoob_tbl ORDER BY runoob_author ASC</span><br></pre></td></tr></table></figure></p>
+<p>5.4 JOIN</p>
+<p>MySQL的JOIN来连接以上两张表来读取runoob_tbl表中所有runoob_author字段在tcount_tbl表对应的runoob_count字段值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">root@host# mysql -u root -p password;</span><br><span class="line">Enter password:*******</span><br><span class="line">mysql&gt; use RUNOOB;</span><br><span class="line">Database changed</span><br><span class="line">mysql&gt; SELECT * FROM tcount_tbl;</span><br><span class="line">+-----------------+----------------+</span><br><span class="line">| runoob_author | runoob_count |</span><br><span class="line">+-----------------+----------------+</span><br><span class="line">| mahran          |             20 |</span><br><span class="line">| mahnaz          |           NULL |</span><br><span class="line">| Jen             |           NULL |</span><br><span class="line">| Gill            |             20 |</span><br><span class="line">| John Poul       |              1 |</span><br><span class="line">| Sanjay          |              1 |</span><br><span class="line">+-----------------+----------------+</span><br><span class="line">6 rows in set (0.01 sec)</span><br><span class="line">mysql&gt; SELECT * from runoob_tbl;</span><br><span class="line">+-------------+----------------+-----------------+-----------------+</span><br><span class="line">| runoob_id | runoob_title | runoob_author | submission_date |</span><br><span class="line">+-------------+----------------+-----------------+-----------------+</span><br><span class="line">|           1 | Learn PHP      | John Poul       | 2007-05-24      |</span><br><span class="line">|           2 | Learn MySQL    | Abdul S         | 2007-05-24      |</span><br><span class="line">|           3 | JAVA Tutorial  | Sanjay          | 2007-05-06      |</span><br><span class="line">+-------------+----------------+-----------------+-----------------+</span><br><span class="line">3 rows in set (0.00 sec)</span><br><span class="line">mysql&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT a.runoob_id, a.runoob_author, b.runoob_count</span><br><span class="line">    -&gt; FROM runoob_tbl a, tcount_tbl b</span><br><span class="line">    -&gt; WHERE a.runoob_author = b.runoob_author;</span><br><span class="line">+-------------+-----------------+----------------+</span><br><span class="line">| runoob_id | runoob_author | runoob_count |</span><br><span class="line">+-------------+-----------------+----------------+</span><br><span class="line">|           1 | John Poul       |              1 |</span><br><span class="line">|           3 | Sanjay          |              1 |</span><br><span class="line">+-------------+-----------------+----------------+</span><br><span class="line">2 rows in set (0.01 sec)</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/ali_pay.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/wx_pay.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">打赏</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/Work/Snap SettingUI文档/" class="pre-post btn btn-default" title="Snap Setings">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Snap Setings</span>
+        </a>
+    
+    
+        <a href="/工具/shadowsocks/CentOS配置Shadowsocks/" class="next-post btn btn-default" title="CentOS搭建VPS控制面板">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">CentOS搭建VPS控制面板</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL"><span class="toc-text">MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL-安装-基本设置"><span class="toc-text">MySQL 安装 基本设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL-基本语法"><span class="toc-text">MySQL 基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-数据库操作"><span class="toc-text">1.数据库操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-表操作"><span class="toc-text">2.表操作</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

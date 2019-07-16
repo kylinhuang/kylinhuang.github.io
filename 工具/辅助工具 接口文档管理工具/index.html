@@ -1,0 +1,349 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content>
+
+
+    <meta name="description" content="每个公司有自己接口管理有自己的 接口管理网页(html页面 ajax测试)有自己公司的GUI工具 (测试接口 )Postman 测试的
+下面介绍下 第三方的接口管理
+1 RAP 阿里巴巴http...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>辅助工具 接口文档管理工具 | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/android/"><i class="fa "></i>android</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Flutter/"><i class="fa "></i>flutter</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="辅助工具 接口文档管理工具">
+            
+	            辅助工具 接口文档管理工具
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/工具/">工具</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/07/04</span>
+        </span>
+        
+    
+</div>
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>377</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>每个公司有自己接口管理<br>有自己的 接口管理网页(html页面 ajax测试)<br>有自己公司的GUI工具 (测试接口 )<br>Postman 测试的</p>
+<p>下面介绍下 第三方的接口管理</p>
+<h2 id="1-RAP-阿里巴巴"><a href="#1-RAP-阿里巴巴" class="headerlink" title="1 RAP 阿里巴巴"></a>1 RAP 阿里巴巴</h2><p><a href="http://rap.taobao.org/org/index.do" target="_blank" rel="noopener">http://rap.taobao.org/org/index.do</a><br><a href="http://rapapi.org/org/index.do" target="_blank" rel="noopener">http://rapapi.org/org/index.do</a></p>
+<p>最初接触 是学习慕课网 js全栈 视频 介绍的 作者之前维护这个项目<br>可视化接口管理工具<br>设定接口<br>模拟数据<br>校验真实接口正确性</p>
+<!-- kylinhuang  a1029755440 -->
+<h2 id="2-doclever"><a href="#2-doclever" class="headerlink" title="2 doclever"></a>2 doclever</h2><p><a href="http://doclever.cn/" target="_blank" rel="noopener">http://doclever.cn/</a><br>全部开源 太牛了</p>
+<!-- kylin
+kylinhuang
+app
+app -->
+<p>围绕接口定义文档，通过一系列自动化工具提升我们的协作效率。<br>DOClever前后端全部采用了javascript来作为开发语言，<br>前端用的是vue+element UI<br>后端是express+mongodb，</p>
+<p>正在使用中 体验完 在写 感受</p>
+<h2 id="3-Swagger"><a href="#3-Swagger" class="headerlink" title="3 Swagger"></a>3 Swagger</h2><p>Swagger是一个规范和完整的框架，<br>用于生成、描述、调用和可视化RESTful风格的Web服务。</p>
+<p>简单来说，Swagger是一个功能强大的接口管理工具，并且提供了多种编程语言的前后端分离解决方案。<br>Swagger主要包含了以下4个部分：<br>　　1. Swagger可以直接嵌入项目中，通过开发时编写注释，自动生成接口文档；<br>　　2. Swagger包含了SwaggerEditor，它是使用yaml语言的Swagger API的编辑器，支持导出yaml和json格式的接口文件；<br>　　3. Swagger包含了SwaggerUI，它将Swagger Editor编辑好的接口文档以html的形式展示出来；<br>　　4. Swagger支持根据定义的接口导出各种语言的服务端或客户端代码。<br>　　<br>　　其中1和4是更加面向开发的内容，开发团队要有自动生成文档的需求，在开发和自测中遵循前后端分离。而2和3是相对可以独立出来的、可供QA人员参考的接口文档管理方案，也是我们主要关注的部分。</p>
+<p>　　Swagger提供了SwaggerEditor和Swagger UI的在线demo，如下图。可以看出，Swagger可以完整地定义一个接口的内容，包括各个参数、返回值的具体结构、类型，SwaggerEditor可以实时进行编辑并在线调试。编辑好的API可以导出为json文件，使用Swagger UI打开即可以看到更美观的接口文档。</p>
+<p>　　Swagger Editor和SwaggerUI的本地部署十分简单，这两者都可以直接从Github上下载源码，将其部署到本地Tomcat服务器上，然后通过浏览器访问即可。官方还提供了其他几种部署方式，具体步骤在帮助文档中有详细说明，这里不再赘述。</p>
+<p>这个 还没使用过 待更新 </p>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/ali_pay.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/wx_pay.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">打赏</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/工具/mysql/本地环境MySQL/" class="pre-post btn btn-default" title="本地环境 MySQL">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">本地环境 MySQL</span>
+        </a>
+    
+    
+        <a href="/工具/node/node安装/" class="next-post btn btn-default" title="安装node">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">安装node</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-RAP-阿里巴巴"><span class="toc-text">1 RAP 阿里巴巴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-doclever"><span class="toc-text">2 doclever</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Swagger"><span class="toc-text">3 Swagger</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="Flutter">
+
+
+    <meta name="description" content="Flutter app 4.添加主页面
+1.创建主页面创建主页面pages/MainPage.dart
+123456789101112131415161718192021222324252627...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Flutter app 4.添加主页面 | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/android/"><i class="fa "></i>android</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Flutter/"><i class="fa "></i>flutter</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Flutter app 4.添加主页面">
+            
+	            Flutter app 4.添加主页面
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/Flutter/">Flutter</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Flutter/">Flutter</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/09/22</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="Flutter-app-4-添加主页面"><a href="#Flutter-app-4-添加主页面" class="headerlink" title="Flutter app 4.添加主页面"></a>Flutter app 4.添加主页面</h1><p><img src="http://p3cnyeawt.bkt.clouddn.com/flutterapp_main.gif" alt></p>
+<h2 id="1-创建主页面"><a href="#1-创建主页面" class="headerlink" title="1.创建主页面"></a>1.创建主页面</h2><p>创建主页面<br>pages/MainPage.dart</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:flutter/cupertino.dart&apos;;</span><br><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line"></span><br><span class="line">class MainPage extends StatefulWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  State&lt;StatefulWidget&gt; createState() &#123;</span><br><span class="line">    return new _MainPageState();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _MainPageState extends State&lt;MainPage&gt; &#123;</span><br><span class="line">  int _tabIndex = 0;</span><br><span class="line">  final tabTextStyleNormal = new TextStyle(color: const Color(0xff969696));</span><br><span class="line">  final tabTextStyleSelected = new TextStyle(color: const Color(0xFFf39b63));</span><br><span class="line"></span><br><span class="line">  var tabImages;</span><br><span class="line">  var _body;</span><br><span class="line">  var appBarTitles = [&apos;MySnap&apos;, &apos;Security&apos;, &apos;Me&apos;];</span><br><span class="line"></span><br><span class="line">  Image getTabImage(path) &#123;</span><br><span class="line">    return new Image.asset(path, width: 20.0, height: 20.0);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  void initData() &#123;</span><br><span class="line">    if (tabImages == null) &#123;</span><br><span class="line">      tabImages = [</span><br><span class="line">        [</span><br><span class="line">          getTabImage(&apos;images/tab_icon_snap_0.png&apos;),</span><br><span class="line">          getTabImage(&apos;images/tab_icon_snap_1.png&apos;)</span><br><span class="line">        ],</span><br><span class="line">        [</span><br><span class="line">          getTabImage(&apos;images/tab_icon_security_0.png&apos;),</span><br><span class="line">          getTabImage(&apos;images/tab_icon_security_1.png&apos;)</span><br><span class="line">        ],</span><br><span class="line">        [</span><br><span class="line">          getTabImage(&apos;images/tab_icon_me_0.png&apos;),</span><br><span class="line">          getTabImage(&apos;images/tab_icon_me_1.png&apos;)</span><br><span class="line">        ]</span><br><span class="line">      ];</span><br><span class="line">    &#125;</span><br><span class="line">    _body = new IndexedStack(</span><br><span class="line">      children: &lt;Widget&gt;[</span><br><span class="line">        new MyTabPage(),</span><br><span class="line">        new MyTabPage(),</span><br><span class="line">        new MyTabPage()</span><br><span class="line">      ],</span><br><span class="line">      index: _tabIndex,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  TextStyle getTabTextStyle(int curIndex) &#123;</span><br><span class="line">    if (curIndex == _tabIndex) &#123;</span><br><span class="line">      return tabTextStyleSelected;</span><br><span class="line">    &#125;</span><br><span class="line">    return tabTextStyleNormal;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Image getTabIcon(int curIndex) &#123;</span><br><span class="line">    if (curIndex == _tabIndex) &#123;</span><br><span class="line">      return tabImages[curIndex][1];</span><br><span class="line">    &#125;</span><br><span class="line">    return tabImages[curIndex][0];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Text getTabTitle(int curIndex) &#123;</span><br><span class="line">    return new Text(appBarTitles[curIndex], style: getTabTextStyle(curIndex));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    initData();</span><br><span class="line">    return new MaterialApp(</span><br><span class="line">      theme: new ThemeData(</span><br><span class="line">          primaryColor: const Color(0xFFf39b63)</span><br><span class="line">      ),</span><br><span class="line">      home: new Scaffold(</span><br><span class="line">        appBar: new AppBar(</span><br><span class="line">            title: new Text(appBarTitles[_tabIndex], style: new TextStyle(color: Colors.white)),</span><br><span class="line">            iconTheme: new IconThemeData(color: Colors.white)</span><br><span class="line">        ),</span><br><span class="line">        body: _body,</span><br><span class="line">        bottomNavigationBar: new CupertinoTabBar(</span><br><span class="line">          items: &lt;BottomNavigationBarItem&gt;[</span><br><span class="line">            new BottomNavigationBarItem(</span><br><span class="line">                icon: getTabIcon(0),</span><br><span class="line">                title: getTabTitle(0)),</span><br><span class="line">            new BottomNavigationBarItem(</span><br><span class="line">                icon: getTabIcon(1),</span><br><span class="line">                title: getTabTitle(1)),</span><br><span class="line">            new BottomNavigationBarItem(</span><br><span class="line">                icon: getTabIcon(2),</span><br><span class="line">                title: getTabTitle(2)),</span><br><span class="line">          ],</span><br><span class="line">          currentIndex: _tabIndex,</span><br><span class="line">          onTap: (index) &#123;</span><br><span class="line">            setState(()&#123;</span><br><span class="line">              _tabIndex = index;</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;,</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-添加图片资源目录"><a href="#2-添加图片资源目录" class="headerlink" title="2.添加图片资源目录"></a>2.添加图片资源目录</h2><p>images/</p>
+<p>图片 放在 images/ 下</p>
+<p>在  pubspec.yaml 中 修改 </p>
+<p>添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">assets:</span><br><span class="line">      - images/tab_icon_snap_0.png</span><br><span class="line">      - images/tab_icon_snap_1.png</span><br><span class="line"></span><br><span class="line">      - images/tab_icon_security_0.png</span><br><span class="line">      - images/tab_icon_security_1.png</span><br><span class="line"></span><br><span class="line">      - images/tab_icon_me_0.png</span><br><span class="line">      - images/tab_icon_me_1.png</span><br></pre></td></tr></table></figure></p>
+<p>创建 /pages/MyTabPage.dart<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line"></span><br><span class="line">class MyTabPage extends StatefulWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  State&lt;StatefulWidget&gt; createState() &#123;</span><br><span class="line">    return new MyTabPageState();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MyTabPageState extends State&lt;MyTabPage&gt; &#123;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  void initState() &#123;</span><br><span class="line">    super.initState();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return  new Center(</span><br><span class="line">      child: new Text(&apos;提示&apos;),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-启动主页面"><a href="#3-启动主页面" class="headerlink" title="3.启动主页面"></a>3.启动主页面</h2><p>管理多个用户界面有两个核心概念和类：路由（Route）和导航器（Navigator），</p>
+<p>路由（Route）是应用程序的“屏幕”或“页面”的抽象，导航器（Navigator）是管理路由的控件。</p>
+<p>导航器（Navigator）可以推送（push）和弹出（pop）路由来帮助用户从当前屏幕移动到另一个屏幕。</p>
+<hr>
+<p>Navigator的跳转有两种，一种是显示跳转，需要我们在MaterialPageRoute中指定widget<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Navigator.of(context).push(new MaterialPageRoute(builder: (context) &#123;</span><br><span class="line">      //指定跳转的页面</span><br><span class="line">      return new Demo1();</span><br><span class="line">    &#125;,));</span><br></pre></td></tr></table></figure></p>
+<p>另一种是隐身跳转，这种跳转需要先定义，后使用，跳转方式就像Arouter一样的路径方式，定义部分需要在MaterialApp下定义routes，routes就跟一个Map&lt;path,Page&gt;集合一样，定义好了path对应的page，那么下次跳转，我们就可以针对path去跳转了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@override</span><br><span class="line">Widget build(BuildContext context) &#123;</span><br><span class="line">  return new MaterialApp(</span><br><span class="line">    home: new Scaffold(</span><br><span class="line">      body: new Center(child: new RaisedButton(onPressed: _pushPage,child: new Text(&quot;跳转&quot;))),</span><br><span class="line">    ),</span><br><span class="line">    //定义路由</span><br><span class="line">    routes: &lt;String,WidgetBuilder&gt;&#123;</span><br><span class="line">      &quot;/demo1&quot;:(BuildContext context)=&gt;new Demo1(),</span><br><span class="line">    &#125;,</span><br><span class="line">  );</span><br></pre></td></tr></table></figure>
+<p>跳转使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Navigator.of(context).pushNamed(&quot;/demo1&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>注意 context   表示 不对跳转 效果也不对</p>
+<p>参考 <a href="https://blog.csdn.net/u013000152/article/details/80940682" target="_blank" rel="noopener">https://blog.csdn.net/u013000152/article/details/80940682</a></p>
+<p>在 LoginPage.dart 登陆完成 启动主页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Navigator.of(context).push(new MaterialPageRoute(</span><br><span class="line">              builder: (ctx) =&gt; new MainPage()</span><br><span class="line">          ));</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/ali_pay.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/wx_pay.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">打赏</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/android/android app App事故 解决方案/" class="pre-post btn btn-default" title="android app App事故 解决方案">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">android app App事故 解决方案</span>
+        </a>
+    
+    
+        <a href="/android/Flutter/app/Flutter app 3.添加loading toast提示/" class="next-post btn btn-default" title="Flutter app 3.添加 loading toast">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Flutter app 3.添加 loading toast</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Flutter-app-4-添加主页面"><span class="toc-text">Flutter app 4.添加主页面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-创建主页面"><span class="toc-text">1.创建主页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-添加图片资源目录"><span class="toc-text">2.添加图片资源目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-启动主页面"><span class="toc-text">3.启动主页面</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

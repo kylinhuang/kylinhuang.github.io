@@ -1,0 +1,371 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="线程">
+
+
+    <meta name="description" content="线程1. 线程的3种实现方式线程的 3 种实现方式：
+
+继承 Thread 类
+实现 Runnable 接口
+实现 Callable 接口
+
+通过 Runnable 和 Callable 接口实...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>线程 | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/android/"><i class="fa "></i>android</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Flutter/"><i class="fa "></i>flutter</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="线程">
+            
+	            线程
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/java/">java</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/线程/">线程</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/16</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><h2 id="1-线程的3种实现方式"><a href="#1-线程的3种实现方式" class="headerlink" title="1. 线程的3种实现方式"></a>1. 线程的3种实现方式</h2><p>线程的 3 种实现方式：</p>
+<ul>
+<li>继承 Thread 类</li>
+<li>实现 Runnable 接口</li>
+<li>实现 Callable 接口</li>
+</ul>
+<p>通过 Runnable 和 Callable 接口实现的类，<br>必须依靠 Thread 来启动，不是真正意义上的线程，可以当做线程任务看待，代码实现如下：</p>
+<h3 id="1-继承Thread类"><a href="#1-继承Thread类" class="headerlink" title="1 继承Thread类"></a>1 继承Thread类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread extends Thread&#123;// 继承Thread类</span><br><span class="line">　　public void run()&#123;</span><br><span class="line">　　// 重写run方法</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Main &#123;</span><br><span class="line">　　public static void main(String[] args)&#123;</span><br><span class="line">　　　　new MyThread().start();//创建并启动线程</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-实现Runnable接口"><a href="#2-实现Runnable接口" class="headerlink" title="2 实现Runnable接口"></a>2 实现Runnable接口</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread2 implements Runnable &#123;// 实现Runnable接口</span><br><span class="line">　　public void run()&#123;</span><br><span class="line">　　// 重写run方法</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Main &#123;</span><br><span class="line">　　public static void main(String[] args)&#123;</span><br><span class="line">　　　　// 创建并启动线程</span><br><span class="line">　　　　MyThread2 myThread=new MyThread2();</span><br><span class="line">　　　　Thread thread=new Thread(myThread);</span><br><span class="line">　　　　thread().start();</span><br><span class="line">　　　　// 或者简写    </span><br><span class="line">       new Thread(new MyThread2()).start();</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现接口比继承 Thread 类具有优势，因为接口是多实现， Thread 类单继承</p>
+<p>实现接口会更好一些，</p>
+<h3 id="3-实现Callable接口"><a href="#3-实现Callable接口" class="headerlink" title="3 实现Callable接口"></a>3 实现Callable接口</h3><p><strong>Callable和Runnable区别 </strong></p>
+<p>执行方法不同，call() 、run()<br>Callable的 <strong>call() </strong>方法 <strong>可以返回值和抛出异常 </strong>，通过 Future 对象进行封装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//Callable  启动线程方式</span><br><span class="line">class ThreadDemo implements Callable&lt;Integer&gt; &#123;</span><br><span class="line">    public Integer call() throws Exception &#123; return null;&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Test &#123; </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        ThreadDemo td = new ThreadDemo();</span><br><span class="line">        FutureTask&lt;Integer&gt; result = new FutureTask&lt;Integer&gt;(td);</span><br><span class="line">        new Thread(result).start();</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-线程状态和生命周期"><a href="#2-线程状态和生命周期" class="headerlink" title="2 线程状态和生命周期"></a>2 线程状态和生命周期</h2><p>线程状态总共6个：new、runnable、blocked、waiting、timed_waiting、terminated</p>
+<p>线程状态：</p>
+<ul>
+<li>NEW：创建后尚未启动的线程处于此状态。</li>
+<li>RUNNABLE：正在Java虚拟机中执行的线程，或正在等待 CPU 时间片线程处于此状态。</li>
+<li>BLOCKED：被阻塞等待监视器锁定的线程处于此状态。</li>
+<li>WAITING：等待其它线程显式地唤醒，否则不会被分配 CPU 时间片的线程处于此状态。</li>
+<li>TIMED_WAITING：无需等待其它线程显式地唤醒，在一定时间之后会被系统自动唤醒的线程处于此状态。</li>
+<li>TERMINATED：已退出的线程处于此状态。</li>
+</ul>
+<p><img src="/images/java/thread.png" alt="thread"></p>
+<p>线程生命周期：new、runnable、running、blocked、dead</p>
+<ul>
+<li>new：新建状态，处于新生状态，有自己的内存，尚未运行，此时不是活着的</li>
+<li>runnable：就绪状态，线程已启动，正等待被分配CPU时间片</li>
+<li>running：运行状态，</li>
+<li>blocked：阻塞状态，<ul>
+<li>正在睡眠：使用sleep(long t)，睡眠指定时间后可进入就绪状态</li>
+<li>正在等待：使用wait()，可调用notify()/notifyAll()，恢复到就绪状态</li>
+<li>被另一个线程阻塞：调用suspend()，可调用resume()方法恢复</li>
+</ul>
+</li>
+<li>dead：死亡状态，分正常死亡或异常终止</li>
+</ul>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/ali_pay.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/wx_pay.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">打赏</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/android/base/android网络通信-HTTP/" class="pre-post btn btn-default" title="android网络通信-HTTP">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">android网络通信-HTTP</span>
+        </a>
+    
+    
+        <a href="/android/java/集合深入分析/" class="next-post btn btn-default" title="集合 深入分析">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">集合 深入分析</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#线程"><span class="toc-text">线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-线程的3种实现方式"><span class="toc-text">1. 线程的3种实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-继承Thread类"><span class="toc-text">1 继承Thread类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-实现Runnable接口"><span class="toc-text">2 实现Runnable接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-实现Callable接口"><span class="toc-text">3 实现Callable接口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-线程状态和生命周期"><span class="toc-text">2 线程状态和生命周期</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

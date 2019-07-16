@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="ionic">
+
+
+    <meta name="description" content="1、四种方式优化ionic,接近原生体验
+http://scottbolinger.com/4-ways-to-make-your-ionic-app-feel-native/
+2、ionic的...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>ionic移动端web的性能优化开源组件 | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/android/"><i class="fa "></i>android</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Flutter/"><i class="fa "></i>flutter</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="ionic移动端web的性能优化开源组件">
+            
+	            ionic移动端web的性能优化开源组件
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/前端/">前端</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/ionic/">ionic</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/01/25</span>
+        </span>
+        
+    
+</div>
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>536</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>1、四种方式优化ionic,接近原生体验</p>
+<p><a href="http://scottbolinger.com/4-ways-to-make-your-ionic-app-feel-native/" target="_blank" rel="noopener">http://scottbolinger.com/4-ways-to-make-your-ionic-app-feel-native/</a></p>
+<p>2、ionic的问题事件收集<br><a href="http://emersonthompson.com.br/ionic-collection/" target="_blank" rel="noopener">http://emersonthompson.com.br/ionic-collection/</a></p>
+<p>3、ionic创建动画<br><a href="http://blog.ionic.io/animating-elements-in-your-ionic-app/" target="_blank" rel="noopener">http://blog.ionic.io/animating-elements-in-your-ionic-app/</a></p>
+<p>4、好用的move.js,基于css3<br><a href="http://devdactic.com/ionic-with-movejs/" target="_blank" rel="noopener">http://devdactic.com/ionic-with-movejs/</a><br><a href="http://visionmedia.github.io/move.js/" target="_blank" rel="noopener">http://visionmedia.github.io/move.js/</a></p>
+<p>5、移动端日期<br><a href="http://rajeshwarpatlolla.github.io/DatePickerForIonicFramework/demo/#/tab/home" target="_blank" rel="noopener">http://rajeshwarpatlolla.github.io/DatePickerForIonicFramework/demo/#/tab/home</a></p>
+<p>6、angularjs的缓存<br><a href="https://github.com/jmdobry/angular-cache" target="_blank" rel="noopener">https://github.com/jmdobry/angular-cache</a></p>
+<p>7、特效移除cards<br><a href="http://codepen.io/ionic/pen/nxEdH" target="_blank" rel="noopener">http://codepen.io/ionic/pen/nxEdH</a></p>
+<p>8、Trigger Pull To Refresh In Ionic Framework Apps<br><a href="https://calendee.com/2015/04/25/trigger-pull-to-refresh-in-ionic-framework-apps/" target="_blank" rel="noopener">https://calendee.com/2015/04/25/trigger-pull-to-refresh-in-ionic-framework-apps/</a></p>
+<p>9、ionic-socketio-chat<br><a href="http://melvin0008.github.io/blog/ionic-socketio-chat/" target="_blank" rel="noopener">http://melvin0008.github.io/blog/ionic-socketio-chat/</a></p>
+<p>10、饿了么开源的服务器中间件restc<br><a href="https://www.oschina.net/p/restc" target="_blank" rel="noopener">https://www.oschina.net/p/restc</a></p>
+<p>11、yii2结合angularjs使用<br><a href="http://blog.neattutorials.com/angularjs-yii2-part-1-routing/" target="_blank" rel="noopener">http://blog.neattutorials.com/angularjs-yii2-part-1-routing/</a></p>
+<p>12、关于github上readme.html的文件编辑<br><a href="http://www.qdfuns.com/notes/21014/2ff9fbda55e88aa7896ce72837852adb.html" target="_blank" rel="noopener">http://www.qdfuns.com/notes/21014/2ff9fbda55e88aa7896ce72837852adb.html</a></p>
+<p>13、一些移动端的日期组件<br><a href="http://market.ionic.io/plugins/onezone-datepicker" target="_blank" rel="noopener">http://market.ionic.io/plugins/onezone-datepicker</a></p>
+<p>14、浮动按钮的多功能<br><a href="http://market.ionic.io/plugins/ion-floating-menu" target="_blank" rel="noopener">http://market.ionic.io/plugins/ion-floating-menu</a></p>
+<p>15、图片预览器<br><a href="http://market.ionic.io/plugins/ionic-photo-browser" target="_blank" rel="noopener">http://market.ionic.io/plugins/ionic-photo-browser</a></p>
+<p>16、一个超级好用的super-popup<br><a href="http://market.ionic.io/plugins/ionic-super-popup" target="_blank" rel="noopener">http://market.ionic.io/plugins/ionic-super-popup</a></p>
+<p>17、超级按钮<br><a href="http://market.ionic.io/plugins/material-action-button#description" target="_blank" rel="noopener">http://market.ionic.io/plugins/material-action-button#description</a></p>
+<p>18、实用的时间轴<br><a href="https://github.com/comapedrosa/ionic-timeline" target="_blank" rel="noopener">https://github.com/comapedrosa/ionic-timeline</a></p>
+<p>19、angularjs非常详细的教程<br><a href="https://www.zouyesheng.com/angular.html" target="_blank" rel="noopener">https://www.zouyesheng.com/angular.html</a></p>
+<p>20、angularjs的教程<br><a href="http://each.sinaapp.com/angular/" target="_blank" rel="noopener">http://each.sinaapp.com/angular/</a><br><a href="https://github.com/dolymood/AngularLearning" target="_blank" rel="noopener">https://github.com/dolymood/AngularLearning</a></p>
+<p>21、25个可遇不可求的jquey插件<br><a href="http://lib.csdn.net/article/jquery/8042" target="_blank" rel="noopener">http://lib.csdn.net/article/jquery/8042</a></p>
+<p>22、超级好用图片轮播<br><a href="http://owlgraphic.com/owlcarousel/demos/custom.html" target="_blank" rel="noopener">http://owlgraphic.com/owlcarousel/demos/custom.html</a></p>
+<p>23、50个丰富的插件<br><a href="http://lib.csdn.net/article/jquery/8038" target="_blank" rel="noopener">http://lib.csdn.net/article/jquery/8038</a></p>
+<p>24、15款最好的 jQuery 网格布局插件<br><a href="http://lib.csdn.net/article/jquery/8394" target="_blank" rel="noopener">http://lib.csdn.net/article/jquery/8394</a></p>
+<p><a href="http://blog.csdn.net/mygrilzhuyulin/article/details/52687738" target="_blank" rel="noopener">http://blog.csdn.net/mygrilzhuyulin/article/details/52687738</a></p>
+<p><a href="https://github.com/dicallc/ionic3_angular4_JD" target="_blank" rel="noopener">https://github.com/dicallc/ionic3_angular4_JD</a></p>
+<p>仿钉钉左右滑动日历<br><a href="http://www.jianshu.com/p/9e0c5c457f43" target="_blank" rel="noopener">http://www.jianshu.com/p/9e0c5c457f43</a></p>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/ali_pay.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/wx_pay.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">打赏</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/前端/ionic/ionic监听事件/" class="pre-post btn btn-default" title="ionic移动端 监听事件">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">ionic移动端 监听事件</span>
+        </a>
+    
+    
+        <a href="/前端/ionic/ionic下拉刷新/" class="next-post btn btn-default" title="ionic 下拉刷新">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">ionic 下拉刷新</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <p>暂无目录</p>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

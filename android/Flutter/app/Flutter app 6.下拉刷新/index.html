@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="Flutter">
+
+
+    <meta name="description" content="Flutter app 6.下拉刷新
+1.添加 下拉刷新创建启动页pages/SnapTabPage.dart
+123456789101112131415161718192021222324@o...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Flutter app 6.下拉刷新 | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/android/"><i class="fa "></i>android</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Flutter/"><i class="fa "></i>flutter</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Flutter app 6.下拉刷新">
+            
+	            Flutter app 6.下拉刷新
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/Flutter/">Flutter</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Flutter/">Flutter</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/09/27</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="Flutter-app-6-下拉刷新"><a href="#Flutter-app-6-下拉刷新" class="headerlink" title="Flutter app 6.下拉刷新"></a>Flutter app 6.下拉刷新</h1><p><img src="http://p3cnyeawt.bkt.clouddn.com/snap_list.gif" alt></p>
+<h2 id="1-添加-下拉刷新"><a href="#1-添加-下拉刷新" class="headerlink" title="1.添加 下拉刷新"></a>1.添加 下拉刷新</h2><p>创建启动页<br>pages/SnapTabPage.dart</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">@override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    print(&quot;  build &quot;);</span><br><span class="line"></span><br><span class="line">    if (listData == null ) &#123;</span><br><span class="line">      return new Center(</span><br><span class="line">        child: new CircularProgressIndicator(),</span><br><span class="line">      );</span><br><span class="line">    &#125; else &#123;</span><br><span class="line"></span><br><span class="line">      print(&quot; listData &quot; + listData.toString());</span><br><span class="line">      var refreshIndicator =  new RefreshIndicator(</span><br><span class="line">        key: _refreshIndicatorKey,</span><br><span class="line">        onRefresh: _pullToRefresh, // onRefresh 参数是一个 Future&lt;Null&gt; 的回调</span><br><span class="line">        child: new ListView.builder(</span><br><span class="line">          // 这句是在list里面的内容不足一屏时，list可能会滑不动，加上就一直都可以滑动</span><br><span class="line">          physics: const AlwaysScrollableScrollPhysics(),</span><br><span class="line">          itemCount: this.listData.length,</span><br><span class="line">          itemBuilder: (_, int index) =&gt; _createItem(listData[index]),</span><br><span class="line">        ),</span><br><span class="line">      );</span><br><span class="line">      return refreshIndicator;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>完整代码<br>main.dart<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class SnapTabPage extends StatefulWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  State&lt;StatefulWidget&gt; createState() &#123;</span><br><span class="line">    return new SnapTabPageState();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class SnapTabPageState extends State&lt;SnapTabPage&gt; &#123;</span><br><span class="line"></span><br><span class="line">  // 这个key用来在不是手动下拉，而是点击某个button或其它操作时，代码直接触发下拉刷新</span><br><span class="line">  final GlobalKey&lt;RefreshIndicatorState&gt; _refreshIndicatorKey = new GlobalKey&lt;RefreshIndicatorState&gt;();</span><br><span class="line"></span><br><span class="line">  var listData;</span><br><span class="line">  ScrollController _controller = new ScrollController();</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  void initState() &#123;</span><br><span class="line">    super.initState();</span><br><span class="line">    print(&quot;  initState &quot;);</span><br><span class="line"></span><br><span class="line">    getList(false);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  SnapTabPageState() &#123;</span><br><span class="line">    print(&quot;  SnapTabPageState &quot;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    print(&quot;  build &quot;);</span><br><span class="line"></span><br><span class="line">    if (listData == null ) &#123;</span><br><span class="line">      return new Center(</span><br><span class="line">        child: new CircularProgressIndicator(),</span><br><span class="line">      );</span><br><span class="line">    &#125; else &#123;</span><br><span class="line"></span><br><span class="line">      print(&quot; listData &quot; + listData.toString());</span><br><span class="line">      var refreshIndicator =  new RefreshIndicator(</span><br><span class="line">        key: _refreshIndicatorKey,</span><br><span class="line">        onRefresh: _pullToRefresh, // onRefresh 参数是一个 Future&lt;Null&gt; 的回调</span><br><span class="line">        child: new ListView.builder(</span><br><span class="line">          // 这句是在list里面的内容不足一屏时，list可能会滑不动，加上就一直都可以滑动</span><br><span class="line">          physics: const AlwaysScrollableScrollPhysics(),</span><br><span class="line">          itemCount: this.listData.length,</span><br><span class="line">          itemBuilder: (_, int index) =&gt; _createItem(listData[index]),</span><br><span class="line">        ),</span><br><span class="line">      );</span><br><span class="line"></span><br><span class="line">      return refreshIndicator;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  getList(bool isLoadMore) async &#123;</span><br><span class="line"></span><br><span class="line">    var session = await new DataHelper().getSession();</span><br><span class="line"></span><br><span class="line">    String url = Api.queryAll + Api.session + session.toString();</span><br><span class="line">    print(&quot;queryAll : $url&quot;);</span><br><span class="line"></span><br><span class="line">    NetUtils.get(url).then((data) &#123;</span><br><span class="line">      if (data != null) &#123;</span><br><span class="line">        Map&lt;String, dynamic&gt; map = json.decode(data);</span><br><span class="line"></span><br><span class="line">        print(&quot;map : $map&quot;);</span><br><span class="line"></span><br><span class="line">        if (map[&apos;messageCode&apos;] == 200 || &apos;ok&apos; == map[&apos;message&apos;]) &#123;</span><br><span class="line">          var data = map[&apos;data&apos;];</span><br><span class="line">          setState(() &#123;</span><br><span class="line">              if (null != data )&#123;</span><br><span class="line">                List list1 = new List();</span><br><span class="line">                list1.addAll(data);</span><br><span class="line">                listData = list1 ;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  Future&lt;Null&gt; _pullToRefresh() async &#123;</span><br><span class="line">    getList(false);</span><br><span class="line">    return null;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  Widget renderRow(i) &#123;</span><br><span class="line">    var layout  = new Column(</span><br><span class="line">      children: &lt;Widget&gt;[</span><br><span class="line">        new Text(&apos;Deliver features faster&apos;),</span><br><span class="line">        new Text(&apos;Craft beautiful UIs&apos;),</span><br><span class="line">        new Expanded(</span><br><span class="line">          child: new FittedBox(</span><br><span class="line">            fit: BoxFit.contain, // otherwise the logo will be tiny</span><br><span class="line">            child: const FlutterLogo(),</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">      ],</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    return new InkWell(</span><br><span class="line">      child: layout,</span><br><span class="line">      onTap: () &#123;</span><br><span class="line">        Navigator.of(context).push(new MaterialPageRoute(</span><br><span class="line">            builder: (ctx) =&gt; null</span><br><span class="line">        ));</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  _createItem(listData) &#123;</span><br><span class="line"></span><br><span class="line">    print(&quot; _createItem &quot;+ listData.toString() );</span><br><span class="line">    return new Column(</span><br><span class="line">      children: &lt;Widget&gt;[</span><br><span class="line">        new Container(</span><br><span class="line">          height: 24.0,</span><br><span class="line">          margin: const EdgeInsets.all(10.0),</span><br><span class="line">          alignment: Alignment.center,</span><br><span class="line">          child: new Text(listData[&quot;name&quot;]),</span><br><span class="line">        ),</span><br><span class="line">        new Container(</span><br><span class="line">          height: 200.0,</span><br><span class="line">        ),</span><br><span class="line">        new Divider(</span><br><span class="line">          height: 0.5,</span><br><span class="line">        )</span><br><span class="line">      ],</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="UI-布局"><a href="#UI-布局" class="headerlink" title="UI 布局"></a>UI 布局</h2><p>1.开启 视觉调试开关</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">布局控件也是可以模拟显示的，通常用于调试布局样式时用到的网格线、标尺、动画帧等。启用方式：</span><br></pre></td></tr></table></figure>
+<p>在main.dart中，引入包：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:flutter/rendering.dart&apos; show debugPaintSizeEnabled;</span><br></pre></td></tr></table></figure></p>
+<p>打开视觉调试开关<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">void main() &#123;</span><br><span class="line">  debugPaintSizeEnabled = true;      //打开视觉调试开关</span><br><span class="line">  runApp(</span><br><span class="line">    new MaterialApp(</span><br><span class="line">      title: &apos;Snap&apos;,</span><br><span class="line">      home: new SplashPage(), // 闪屏页,</span><br><span class="line">      routes: &lt;String, WidgetBuilder&gt;&#123; // 路由</span><br><span class="line">        &apos;/LoginPage&apos;: (BuildContext context) =&gt; new LoginPage(),</span><br><span class="line">        &apos;/HomePage&apos;: (BuildContext context) =&gt; new MainPage(),</span><br><span class="line">      &#125;,</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>开启后效果</p>
+<p><img src="http://p3cnyeawt.bkt.clouddn.com/flutterapp_list_test1.jpg" alt></p>
+<p>调整UI<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">_createItem(listData) &#123;</span><br><span class="line"></span><br><span class="line">    print(&quot; _createItem &quot;+ listData.toString() );</span><br><span class="line"></span><br><span class="line">    print(&quot; thumbUrl &quot;+ listData[&quot;thumbUrl&quot;] );</span><br><span class="line">    var imgUrl = listData[&apos;thumbUrl&apos;];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    return new Column(</span><br><span class="line">      children: &lt;Widget&gt;[</span><br><span class="line">//        title</span><br><span class="line">        new Container(</span><br><span class="line">          height: 24.0,</span><br><span class="line">          margin: const EdgeInsets.all(10.0),</span><br><span class="line">          alignment: Alignment.center,</span><br><span class="line">          child: new Row(</span><br><span class="line">            mainAxisAlignment: MainAxisAlignment.spaceBetween,</span><br><span class="line">            children: &lt;Widget&gt;[</span><br><span class="line">              new Text(listData[&quot;name&quot;]),</span><br><span class="line">              new  Row(</span><br><span class="line">                children: &lt;Widget&gt;[</span><br><span class="line">                  new Container(</span><br><span class="line">                    decoration: new BoxDecoration(</span><br><span class="line">//                      color: const Color(0xfffce5cd),</span><br><span class="line">                      border: new Border.all( color: Colors.grey, width: 1.0),</span><br><span class="line">                      borderRadius: new BorderRadius.circular(50.0),</span><br><span class="line">                    ),</span><br><span class="line">                    child:  new Row(</span><br><span class="line">                      children: &lt;Widget&gt;[</span><br><span class="line">                        new Padding(</span><br><span class="line">                          padding: new EdgeInsets.only(top:2.0, bottom: 2.0, left: 2.0),</span><br><span class="line">                          child: new Image.asset(&quot;images/brightness_selected.png&quot;,</span><br><span class="line">                            width: 30.0 ,</span><br><span class="line">                            height: 30.0,</span><br><span class="line">                            fit: BoxFit.contain,</span><br><span class="line">                          ),</span><br><span class="line">                        ),</span><br><span class="line"></span><br><span class="line">                        new Padding(</span><br><span class="line">                          padding: new EdgeInsets.only(right: 5.0),</span><br><span class="line">                          child: new Text(&quot;OFF&quot;),</span><br><span class="line">                        ),</span><br><span class="line">                      ],</span><br><span class="line">                    ),</span><br><span class="line">                  ),</span><br><span class="line"></span><br><span class="line">                  new Image.asset(&quot;images/btn_settings_enable.png&quot;, width: 60.0),</span><br><span class="line"></span><br><span class="line">                ],</span><br><span class="line"></span><br><span class="line">              ),</span><br><span class="line">            ],</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">        new Container(</span><br><span class="line">          child: new AspectRatio(</span><br><span class="line">            aspectRatio:16/9, //横纵比 长宽比  3:2</span><br><span class="line">            child: new Image.network(imgUrl),//项目资源文件</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">        new Divider(</span><br><span class="line">          height: 0.5,</span><br><span class="line">        )</span><br><span class="line">      ],</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>顶部 左右对齐<br>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mainAxisAlignment: MainAxisAlignment.spaceBetween,</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>圆角</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">new Container(</span><br><span class="line">  decoration: new BoxDecoration(</span><br><span class="line">  //  color: const Color(0xfffce5cd),</span><br><span class="line">    border: new Border.all( color: Colors.grey, width: 1.0),</span><br><span class="line">    borderRadius: new BorderRadius.circular(50.0),</span><br><span class="line">  ),</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>padding<br>只好这么写了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">new Padding(</span><br><span class="line">  padding: new EdgeInsets.only(top:2.0, bottom: 2.0, left: 2.0),</span><br><span class="line">  child: new Image.asset(&quot;images/brightness_selected.png&quot;,</span><br><span class="line">    width: 30.0 ,</span><br><span class="line">    height: 30.0,</span><br><span class="line">    fit: BoxFit.contain,</span><br><span class="line">  ),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>宽高比</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">new AspectRatio(</span><br><span class="line">  aspectRatio:3/2, //横纵比 长宽比  3:2</span><br><span class="line">  child: new Image(image: new AssetImage(&apos;images/img1.jpg&apos;)),//项目资源文件</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>虽然 对 flutter  的UI  有各种怨言</p>
+<p>但是 还是强忍着 学吧</p>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/ali_pay.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/wx_pay.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">打赏</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/工具/kylinhuang/" class="pre-post btn btn-default" title="简介">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">简介</span>
+        </a>
+    
+    
+        <a href="/android/Flutter/app/Flutter app 5.添加启动页/" class="next-post btn btn-default" title="Flutter app 5.添加启动页">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Flutter app 5.添加启动页</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Flutter-app-6-下拉刷新"><span class="toc-text">Flutter app 6.下拉刷新</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-添加-下拉刷新"><span class="toc-text">1.添加 下拉刷新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UI-布局"><span class="toc-text">UI 布局</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

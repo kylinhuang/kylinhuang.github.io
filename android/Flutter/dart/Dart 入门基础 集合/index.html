@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="Flutter">
+
+
+    <meta name="description" content="Dart 入门基础 集合Dart核心库提供了List（列表）、Map（映射）、Set（集）三种集合类型
+List（列表）固定长度的列表，一旦定义就无法改变长度
+1234List&lt;int&g...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Dart 入门基础 集合 | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/android/"><i class="fa "></i>android</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Flutter/"><i class="fa "></i>flutter</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Dart 入门基础 集合">
+            
+	            Dart 入门基础 集合
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/Flutter/">Flutter</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Flutter/">Flutter</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/08/26</span>
+        </span>
+        
+    
+</div>
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>323</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="Dart-入门基础-集合"><a href="#Dart-入门基础-集合" class="headerlink" title="Dart 入门基础 集合"></a>Dart 入门基础 集合</h1><p>Dart核心库提供了List（列表）、Map（映射）、Set（集）三种集合类型</p>
+<h2 id="List（列表）"><a href="#List（列表）" class="headerlink" title="List（列表）"></a>List（列表）</h2><p>固定长度的列表，一旦定义就无法改变长度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;int&gt; fixedLengthList = new List(5);</span><br><span class="line">fixedLengthList[0] = 87;</span><br><span class="line">print(fixedLengthList);</span><br><span class="line">print(fixedLengthList[0]);</span><br></pre></td></tr></table></figure>
+<p>可改变长度的列表，可以根据需要改变长度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">List&lt;int&gt; growableList = [1, 2];</span><br><span class="line">print(growableList);</span><br><span class="line"></span><br><span class="line">growableList.length = 0;</span><br><span class="line">print(growableList);</span><br><span class="line"></span><br><span class="line">growableList.add(499);</span><br><span class="line">print(growableList);</span><br><span class="line"></span><br><span class="line">growableList[0] = 87;</span><br><span class="line">print(growableList);</span><br></pre></td></tr></table></figure>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><h4 id="List-int-length"><a href="#List-int-length" class="headerlink" title="List([int length])"></a>List([int length])</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 创建固定长度的列表</span><br><span class="line">List fixedLengthList = new List(3);</span><br><span class="line">print(fixedLengthList.length);</span><br><span class="line"></span><br><span class="line">// 创建可改变长度的列表</span><br><span class="line">List growableListA = new List();</span><br><span class="line">print(growableListA.length);</span><br><span class="line">growableListA.length = 3;</span><br><span class="line">print(growableListA.length);</span><br><span class="line"></span><br><span class="line">// 创建可在固定范围内改变长度的列表</span><br><span class="line">List growableListB = new List()..length = 500;</span><br></pre></td></tr></table></figure>
+<h4 id="List-unmodifiable-Iterable-elements"><a href="#List-unmodifiable-Iterable-elements" class="headerlink" title="List.unmodifiable(Iterable elements)"></a>List.unmodifiable(Iterable elements)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 创建包含所有元素的固定长度列表</span><br><span class="line">List fixedLengthListB = new List.unmodifiable([1, 2, 3]);</span><br><span class="line">print(fixedLengthListB.length);</span><br></pre></td></tr></table></figure>
+<h4 id="List-from-Iterable-elements-bool-growable-true"><a href="#List-from-Iterable-elements-bool-growable-true" class="headerlink" title="List.from(Iterable elements, {bool growable: true})"></a>List.from(Iterable elements, {bool growable: true})</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 创建包含所有元素的可改变长度列表</span><br><span class="line">List growableListC = new List.from([1, 2, 3]);</span><br><span class="line">print(growableListC.length);</span><br><span class="line">growableListC.add(4);</span><br><span class="line">print(growableListC.length);</span><br></pre></td></tr></table></figure>
+<h4 id="List-filled-int-length-E-fill-bool-growable-false"><a href="#List-filled-int-length-E-fill-bool-growable-false" class="headerlink" title="List.filled(int length, E fill, {bool growable: false})"></a>List.filled(int length, E fill, {bool growable: false})</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 为所有元素统一赋值</span><br><span class="line">List fixedLengthList = new List&lt;int&gt;.filled(3, 0);</span><br><span class="line">print(fixedLengthList);</span><br></pre></td></tr></table></figure>
+<h4 id="List-generate-int-length-E-generator-int-index-bool-growable-true"><a href="#List-generate-int-length-E-generator-int-index-bool-growable-true" class="headerlink" title="List.generate(int length, E generator(int index), {bool growable: true})"></a>List.generate(int length, E generator(int index), {bool growable: true})</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 用生成器给所有元素赋初始值</span><br><span class="line">List fixedLengthList = new List&lt;int&gt;.generate(4, (int index) &#123;</span><br><span class="line">    return index * index;</span><br><span class="line">&#125;);</span><br><span class="line">print(fixedLengthList);</span><br></pre></td></tr></table></figure>
+<h3 id="所有属性"><a href="#所有属性" class="headerlink" title="所有属性"></a>所有属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">List fixedLengthList = new List&lt;int&gt;.generate(4, (int index) &#123;</span><br><span class="line">    return index * index;</span><br><span class="line">&#125;);</span><br><span class="line">// 返回第一个元素</span><br><span class="line">print(fixedLengthList.first);</span><br><span class="line">// 返回最后一个元素</span><br><span class="line">print(fixedLengthList.last);</span><br><span class="line">// 返回列表的哈希码</span><br><span class="line">print(fixedLengthList.hashCode);</span><br><span class="line">// 列表是否为空</span><br><span class="line">print(fixedLengthList.isEmpty);</span><br><span class="line">// 列表是否不为空</span><br><span class="line">print(fixedLengthList.isNotEmpty);</span><br><span class="line">// 返回一个新的迭代器</span><br><span class="line">print(fixedLengthList.iterator);</span><br><span class="line">// 列表中多少个元素</span><br><span class="line">print(fixedLengthList.length);</span><br><span class="line">// 返回相反顺序的列表</span><br><span class="line">print(fixedLengthList.reversed);</span><br><span class="line">// 返回对象运行时的类型</span><br><span class="line">print(fixedLengthList.runtimeType);</span><br><span class="line">// 列表是否只有一个元素，则否报错</span><br><span class="line">print(fixedLengthList.single);</span><br></pre></td></tr></table></figure>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><h4 id="返回多种类型的输出"><a href="#返回多种类型的输出" class="headerlink" title="返回多种类型的输出"></a>返回多种类型的输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List growableList = new List.from([1, 2, 3]);</span><br><span class="line">// 返回列表的字符串表示</span><br><span class="line">print(growableList.toString());</span><br><span class="line">// 返回列表的集表示</span><br><span class="line">print(growableList.toSet());</span><br><span class="line">// 返回列表的列表表示</span><br><span class="line">print(growableList.toList());</span><br><span class="line">// 用指定字符连接列表元素</span><br><span class="line">print(growableList.join(&quot;,&quot;));</span><br></pre></td></tr></table></figure>
+<h4 id="给列表增加元素"><a href="#给列表增加元素" class="headerlink" title="给列表增加元素"></a>给列表增加元素</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">List growableList = new List();</span><br><span class="line">// 增加一个元素到列表末尾</span><br><span class="line">growableList.add(10);</span><br><span class="line">print(growableList);</span><br><span class="line">// 增加一个元素到指定下标</span><br><span class="line">growableList.insert(1, 20);</span><br><span class="line">print(growableList);</span><br><span class="line">// 增加一个列表到列表末尾</span><br><span class="line">growableList.addAll([30, 60]);</span><br><span class="line">print(growableList);</span><br><span class="line">// 增加一个列表到指定下标</span><br><span class="line">growableList.insertAll(3, [40, 50]);</span><br><span class="line">print(growableList);</span><br></pre></td></tr></table></figure>
+<h4 id="各种删除操作的方法"><a href="#各种删除操作的方法" class="headerlink" title="各种删除操作的方法"></a>各种删除操作的方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">List growableList = new List.from([1, 2, 3, 3, 3, 4]);</span><br><span class="line">// 移除列表中匹配的第一个元素</span><br><span class="line">growableList.remove(3);</span><br><span class="line">print(growableList);</span><br><span class="line">// 移除列表中第几个元素</span><br><span class="line">growableList.removeAt(0);</span><br><span class="line">print(growableList);</span><br><span class="line">// 移除列表中最后一个元素</span><br><span class="line">growableList.removeLast();</span><br><span class="line">print(growableList);</span><br><span class="line">// 移除列表的所有元素</span><br><span class="line">growableList.clear();</span><br><span class="line">print(growableList);</span><br><span class="line"></span><br><span class="line">List&lt;int&gt; listB = [1, 2, 3, 4, 5];</span><br><span class="line">// 移除开始下标（不包括）至结束下标（包括）内的元素</span><br><span class="line">listB.removeRange(1, 4);</span><br><span class="line">print(listB);</span><br><span class="line"></span><br><span class="line">List&lt;int&gt; listA = [1, 2, 3, 4, 5];</span><br><span class="line">// 移除并替换开始下标（不包括）至结束下标（包括）内的元素</span><br><span class="line">listA.replaceRange(1, 4, [6, 7]);</span><br><span class="line">print(listA);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; numbersA = [&apos;one&apos;, &apos;two&apos;, &apos;three&apos;, &apos;four&apos;];</span><br><span class="line">/*  移除所有满足条件的元素，此为Dart的一种速写语法</span><br><span class="line">    numbersA.removeWhere((item) =&gt; item.length == 3);   */</span><br><span class="line">numbersA.removeWhere((item)&#123;</span><br><span class="line">    return item.length == 3;</span><br><span class="line">&#125;);</span><br><span class="line">print(numbersA);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; numbersB = [&apos;one&apos;, &apos;two&apos;, &apos;three&apos;, &apos;four&apos;];</span><br><span class="line">/*  移除所有不满足条件的元素，此为Dart的一种速写语法</span><br><span class="line">    numbersB.retainWhere((item) =&gt; item.length == 3);   */</span><br><span class="line">numbersB.retainWhere((item)&#123;</span><br><span class="line">    return item.length == 3;</span><br><span class="line">&#125;);</span><br><span class="line">print(numbersB);</span><br></pre></td></tr></table></figure>
+<h4 id="按顺序迭代列表"><a href="#按顺序迭代列表" class="headerlink" title="按顺序迭代列表"></a>按顺序迭代列表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names = [&quot;Alice&quot;, &quot;Daphne&quot;, &quot;Elizabeth&quot;, &quot;Joanna&quot;];</span><br><span class="line">names.forEach((name)&#123;</span><br><span class="line">    print(name);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="各种查询输出方法"><a href="#各种查询输出方法" class="headerlink" title="各种查询输出方法"></a>各种查询输出方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names = [&apos;Abbey&apos;, &apos;Fallon&apos;, &apos;Xenia&apos;, &apos;Callie&apos;, &apos;Callie&apos;];</span><br><span class="line">// 列表中是否包含指定元素</span><br><span class="line">print(names.contains(&apos;Fallon&apos;));</span><br><span class="line">// 返回列表中的第几个元素</span><br><span class="line">print(names.elementAt(2));</span><br><span class="line">// 返回列表中第一个匹配元素的下标</span><br><span class="line">print(names.indexOf(&apos;Callie&apos;));</span><br><span class="line">// 返回列表中最后一个匹配元素的下标</span><br><span class="line">print(names.lastIndexOf(&apos;Callie&apos;));</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; colors = [&apos;red&apos;, &apos;green&apos;, &apos;blue&apos;, &apos;orange&apos;, &apos;pink&apos;];</span><br><span class="line">// 返回从开始下标（包括）到结束下标（不包括）元素的列表</span><br><span class="line">print(colors.sublist(1, 3));</span><br><span class="line">// 返回从开始下标（包括）到最后一个元素的列表</span><br><span class="line">print(colors.sublist(1));</span><br></pre></td></tr></table></figure>
+<h4 id="对列表元素做一些改动"><a href="#对列表元素做一些改动" class="headerlink" title="对列表元素做一些改动"></a>对列表元素做一些改动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; listA = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];</span><br><span class="line">// 从第几个元素开始覆盖原列表</span><br><span class="line">listA.setAll(1, [&apos;bee&apos;, &apos;sea&apos;]);</span><br><span class="line">print(listA);</span><br><span class="line"></span><br><span class="line">List&lt;int&gt; listB = [1, 2, 3, 4, 5];</span><br><span class="line">// 对列表进行随机排序</span><br><span class="line">listB.shuffle();</span><br><span class="line">print(listB);</span><br><span class="line"></span><br><span class="line">List&lt;int&gt; listC = [1, 2, 3, 4, 5];</span><br><span class="line">// 对列表进行顺序排序</span><br><span class="line">listC.sort();</span><br><span class="line">print(listC);</span><br></pre></td></tr></table></figure>
+<h2 id="Map（映射）"><a href="#Map（映射）" class="headerlink" title="Map（映射）"></a>Map（映射）</h2><p>映射也就是键值对，每个键都有与之相关联的一个值</p>
+<h3 id="构造函数-1"><a href="#构造函数-1" class="headerlink" title="构造函数"></a>构造函数</h3><h4 id="Map"><a href="#Map" class="headerlink" title="Map()"></a>Map()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, int&gt; map = &#123;&quot;a&quot;:1, &quot;b&quot;:2, &quot;c&quot;:3&#125;;</span><br><span class="line">print(map[&quot;a&quot;]);</span><br></pre></td></tr></table></figure>
+<h4 id="Map-fromIterable-Iterable-iterable-K-key-element-V-value-element"><a href="#Map-fromIterable-Iterable-iterable-K-key-element-V-value-element" class="headerlink" title="Map.fromIterable(Iterable iterable, {K key(element), V value(element)})"></a>Map.fromIterable(Iterable iterable, {K key(element), V value(element)})</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List&lt;int&gt; list = [1, 2, 3];</span><br><span class="line">// 以下代码用到了速写语法，后面会详细讲解</span><br><span class="line">Map&lt;String, int&gt; map = new Map.fromIterable(list,</span><br><span class="line">    key: (item) =&gt; item.toString(),</span><br><span class="line">    value: (item) =&gt; item * item);</span><br><span class="line">// 1 + 4 = 5</span><br><span class="line">print(map[&apos;1&apos;] + map[&apos;2&apos;]);</span><br><span class="line">// 9 - 4 = 5</span><br><span class="line">print(map[&apos;3&apos;] - map[&apos;2&apos;]);</span><br></pre></td></tr></table></figure>
+<h4 id="Map-fromIterables-Iterable-keys-Iterable-values"><a href="#Map-fromIterables-Iterable-keys-Iterable-values" class="headerlink" title="Map.fromIterables(Iterable keys, Iterable values)"></a>Map.fromIterables(Iterable keys, Iterable values)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; letters = [&apos;b&apos;, &apos;c&apos;];</span><br><span class="line">List&lt;String&gt; words = [&apos;bad&apos;, &apos;cat&apos;];</span><br><span class="line">Map&lt;String, String&gt; map = new Map.fromIterables(letters, words);</span><br><span class="line">// bad + cat = badcat</span><br><span class="line">print(map[&apos;b&apos;] + map[&apos;c&apos;]);</span><br></pre></td></tr></table></figure>
+<h3 id="所有属性-1"><a href="#所有属性-1" class="headerlink" title="所有属性"></a>所有属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, int&gt; map = &#123;&quot;a&quot;:1, &quot;b&quot;:2, &quot;c&quot;:3&#125;;</span><br><span class="line">// 返回映射的哈希码</span><br><span class="line">print(map.hashCode);</span><br><span class="line">// 映射上是否没有键值对</span><br><span class="line">print(map.isEmpty);</span><br><span class="line">// 映射上是否有键值对</span><br><span class="line">print(map.isNotEmpty);</span><br><span class="line">// 返回映射的所有键</span><br><span class="line">print(map.keys);</span><br><span class="line">// 返回映射的所有值</span><br><span class="line">print(map.values);</span><br><span class="line">// 返回映射上键值对的数目</span><br><span class="line">print(map.length);</span><br><span class="line">// 返回对象运行时的类型</span><br><span class="line">print(map.runtimeType);</span><br></pre></td></tr></table></figure>
+<h3 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, int&gt; map = &#123;&quot;a&quot;:1, &quot;b&quot;:2, &quot;c&quot;:3&#125;;</span><br><span class="line">// 返回映射的字符串表示</span><br><span class="line">print(map.toString());</span><br><span class="line">// 按顺序迭代映射</span><br><span class="line">map.forEach((key, value)&#123;</span><br><span class="line">    print(key + &quot; : &quot; + value.toString());</span><br><span class="line">&#125;);</span><br><span class="line">// 添加其他键值对到映射中</span><br><span class="line">map.addAll(&#123;&quot;d&quot;:4, &quot;e&quot;:5&#125;);</span><br><span class="line">// 映射是否包含指定键</span><br><span class="line">print(map.containsKey(&quot;d&quot;));</span><br><span class="line">// 映射是否包含指定值</span><br><span class="line">print(map.containsValue(5));</span><br><span class="line">// 删除指定键值对</span><br><span class="line">map.remove(&quot;a&quot;);</span><br><span class="line">// 删除所有键值对</span><br><span class="line">map.clear();</span><br><span class="line"></span><br><span class="line">Map&lt;String, int&gt; scores = &#123;&apos;Bob&apos;: 36&#125;;</span><br><span class="line">for (var key in [&apos;Bob&apos;, &apos;Rohan&apos;, &apos;Sophena&apos;]) &#123;</span><br><span class="line">    // 查找指定键，如果不存在就添加</span><br><span class="line">    scores.putIfAbsent(key, () =&gt; key.length);</span><br><span class="line">&#125;</span><br><span class="line">print(scores[&apos;Bob&apos;]);</span><br><span class="line">print(scores[&apos;Rohan&apos;]);</span><br><span class="line">print(scores[&apos;Sophena&apos;]);</span><br></pre></td></tr></table></figure>
+<h2 id="Set（集）"><a href="#Set（集）" class="headerlink" title="Set（集）"></a>Set（集）</h2><p>集的每个对象只能出现一次，不能重复</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Set villains = new Set();</span><br><span class="line">villains.add(&apos;Joker&apos;);</span><br><span class="line">villains.addAll( [&apos;Lex Luther&apos;, &apos;Voldemort&apos;] );</span><br><span class="line">print(villains);</span><br></pre></td></tr></table></figure>
+<h3 id="所有属性-2"><a href="#所有属性-2" class="headerlink" title="所有属性"></a>所有属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Set villains = new Set.from([&apos;Joker&apos;, &apos;Lex Luther&apos;, &apos;Voldemort&apos;]);</span><br><span class="line">// 返回第一个元素</span><br><span class="line">print(villains.first);</span><br><span class="line">// 返回最后一个元素</span><br><span class="line">print(villains.last);</span><br><span class="line">// 返回元素的数量</span><br><span class="line">print(villains.length);</span><br><span class="line">// 集只有一个元素就返回元素，否则异常</span><br><span class="line">//print(villains.single);</span><br><span class="line">// 集是否没有元素</span><br><span class="line">print(villains.isEmpty);</span><br><span class="line">// 集是否有元素</span><br><span class="line">print(villains.isNotEmpty);</span><br><span class="line">// 返回集的哈希码</span><br><span class="line">print(villains.hashCode);</span><br><span class="line">// 返回对象运行时的类型</span><br><span class="line">print(villains.runtimeType);</span><br><span class="line">// 返回集的可迭代对象</span><br><span class="line">print(villains.iterator);</span><br></pre></td></tr></table></figure>
+<h3 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Set villains = new Set.from([&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]);</span><br><span class="line">// 添加一个值</span><br><span class="line">villains.add(&quot;D&quot;);</span><br><span class="line">print(villains);</span><br><span class="line">// 添加一些值</span><br><span class="line">villains.addAll([&quot;E&quot;, &quot;F&quot;]);</span><br><span class="line">print(villains);</span><br><span class="line">// 以字符串输出集</span><br><span class="line">print(villains.toString());</span><br><span class="line">// 将集的值用指定字符连接，以字符串输出</span><br><span class="line">print(villains.join(&quot;,&quot;));</span><br><span class="line">// 集是否包含指定值</span><br><span class="line">print(villains.contains(&quot;C&quot;));</span><br><span class="line">// 集是否包含一些值</span><br><span class="line">print(villains.containsAll([&quot;E&quot;, &quot;F&quot;]));</span><br><span class="line">// 返回集的第几个值</span><br><span class="line">print(villains.elementAt(1));</span><br><span class="line">// 删除集的指定值，成功则返回true</span><br><span class="line">print(villains.remove(&quot;A&quot;));</span><br><span class="line">// 删除集的一些值</span><br><span class="line">villains.removeAll([&quot;B&quot;, &quot;C&quot;]);</span><br><span class="line">// 删除集的所有值</span><br><span class="line">villains.clear();</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/ali_pay.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/wx_pay.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">打赏</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/android/Flutter/dart/Dart 入门基础 函数与运算符/" class="pre-post btn btn-default" title="Dart 入门基础 函数与运算符">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Dart 入门基础 函数与运算符</span>
+        </a>
+    
+    
+        <a href="/android/Flutter/dart/Dart 入门基础 正则表达式/" class="next-post btn btn-default" title="Dart 入门基础 正则表达式">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Dart 入门基础 正则表达式</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dart-入门基础-集合"><span class="toc-text">Dart 入门基础 集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#List（列表）"><span class="toc-text">List（列表）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#构造函数"><span class="toc-text">构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#List-int-length"><span class="toc-text">List([int length])</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#List-unmodifiable-Iterable-elements"><span class="toc-text">List.unmodifiable(Iterable elements)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#List-from-Iterable-elements-bool-growable-true"><span class="toc-text">List.from(Iterable elements, {bool growable: true})</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#List-filled-int-length-E-fill-bool-growable-false"><span class="toc-text">List.filled(int length, E fill, {bool growable: false})</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#List-generate-int-length-E-generator-int-index-bool-growable-true"><span class="toc-text">List.generate(int length, E generator(int index), {bool growable: true})</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#所有属性"><span class="toc-text">所有属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用方法"><span class="toc-text">常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#返回多种类型的输出"><span class="toc-text">返回多种类型的输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#给列表增加元素"><span class="toc-text">给列表增加元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#各种删除操作的方法"><span class="toc-text">各种删除操作的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#按顺序迭代列表"><span class="toc-text">按顺序迭代列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#各种查询输出方法"><span class="toc-text">各种查询输出方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对列表元素做一些改动"><span class="toc-text">对列表元素做一些改动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map（映射）"><span class="toc-text">Map（映射）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#构造函数-1"><span class="toc-text">构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Map"><span class="toc-text">Map()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Map-fromIterable-Iterable-iterable-K-key-element-V-value-element"><span class="toc-text">Map.fromIterable(Iterable iterable, {K key(element), V value(element)})</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Map-fromIterables-Iterable-keys-Iterable-values"><span class="toc-text">Map.fromIterables(Iterable keys, Iterable values)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#所有属性-1"><span class="toc-text">所有属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用方法-1"><span class="toc-text">常用方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Set（集）"><span class="toc-text">Set（集）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#所有属性-2"><span class="toc-text">所有属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用方法-2"><span class="toc-text">常用方法</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

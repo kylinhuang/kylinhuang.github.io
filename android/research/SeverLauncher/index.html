@@ -1,0 +1,676 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="kylinhuang">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.kylinhuang.cn">
+    <!--SEO-->
+
+    <meta name="keywords" content="research">
+
+
+    <meta name="description" content="无意间发现 开源中国中有人回复  看见 以前的文章就想整理下 
+这是一份 2013年 创维 研究服务器自定义Launcher 时候调研 的 文章  一直在有道笔记 
+原理app  从服务器端获取...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>SeverLauncher | kylinhuang</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="kylinhuang" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="kylinhuang">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.kylinhuang.cn">kylinhuang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/android/"><i class="fa "></i>android</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Flutter/"><i class="fa "></i>flutter</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SeverLauncher">
+            
+	            SeverLauncher
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/android/">android</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/research/">research</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/04/17</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>无意间发现 开源中国中有人回复  看见 以前的文章<br>就想整理下 </p>
+<p>这是一份 2013年 创维 研究服务器自定义Launcher 时候调研 的 文章  一直在有道笔记 </p>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>app  从服务器端获取 数据</p>
+<p>通过数据 绘制控件  大小 以及位置  和点 击 跳转 </p>
+<p>服务器 与 客户端 统一一套协议</p>
+<p>例子</p>
+<p><img src="http://p3cnyeawt.bkt.clouddn.com/SeverLauncher_img.jpg" alt title="SeverLauncher_img"></p>
+<p>左上角 logo</p>
+<p><img src="http://p3cnyeawt.bkt.clouddn.com/SeverLauncher_img_logo.jpg" alt></p>
+<pre><code>&quot;logo&quot;: {
+    &quot;background_url&quot;: &quot; http://image.baidu.com/i?tn=download&amp;ipn=dwnl&amp;word=logo%20png&amp;ie=utf-8&amp;fr=result&amp;url=http%3A%2F%2Fimg.article.pchome.net%2F00%2F37%2F47%2F30%2Fpic_lib%2Fs960x639%2F0e80039f04ea6106487069a0ffc82a8es960x639.JPG&quot;,
+    &quot;hasFocus&quot;: false,
+    &quot;height&quot;: 50,
+    &quot;width&quot;: 50,
+    &quot;x&quot;: 50,
+    &quot;y&quot;: 30
+},
+</code></pre><p>注释<br>background_url 为空  加载 apk默认的logo</p>
+<hr>
+<p>右上角 网络状态<br><img src="http://p3cnyeawt.bkt.clouddn.com/SeverLauncher_img_network.jpg" alt></p>
+<pre><code>&quot;network&quot;: {
+    &quot;hasFocus&quot;: false,
+    &quot;height&quot;: 0,
+    &quot;width&quot;: 0,
+    &quot;x&quot;: 1100,
+    &quot;y&quot;: 40
+},
+</code></pre><p>右上角 时间<br><img src="http://p3cnyeawt.bkt.clouddn.com/SeverLauncher_img_time.jpg" alt></p>
+<pre><code>&quot;timeEntity&quot;: {
+    &quot;textSize&quot;: 16,
+    &quot;timeType&quot;: 12,
+    &quot;hasFocus&quot;: false,
+    &quot;height&quot;: 0,
+    &quot;width&quot;: 0,
+    &quot;x&quot;: 1150,
+    &quot;y&quot;: 40
+}
+</code></pre><p>Title </p>
+<p><img src="http://p3cnyeawt.bkt.clouddn.com/SeverLauncher_img_title.jpg" alt></p>
+<pre><code>&quot;arrayTitle&quot;: [
+    {
+        &quot;text&quot;: &quot;电视&quot;,
+        &quot;position&quot;: 1,
+        &quot;textSize&quot;: 25,
+        &quot;hasFocus&quot;: false,
+        &quot;height&quot;: 50,
+        &quot;width&quot;: 100,
+        &quot;x&quot;: 350,
+        &quot;y&quot;: 650
+    },
+    {
+        &quot;text&quot;: &quot;设置&quot;,
+        &quot;position&quot;: 2,
+        &quot;textSize&quot;: 25,
+        &quot;hasFocus&quot;: false,
+        &quot;height&quot;: 50,
+        &quot;width&quot;: 100,
+        &quot;x&quot;: 500,
+        &quot;y&quot;: 650
+    },
+    {
+        &quot;text&quot;: &quot;新闻&quot;,
+        &quot;position&quot;: 3,
+        &quot;textSize&quot;: 25,
+        &quot;hasFocus&quot;: false,
+        &quot;height&quot;: 50,
+        &quot;width&quot;: 100,
+        &quot;x&quot;: 650,
+        &quot;y&quot;: 650
+    },
+    {
+        &quot;text&quot;: &quot;用户&quot;,
+        &quot;position&quot;: 4,
+        &quot;textSize&quot;: 25,
+        &quot;hasFocus&quot;: false,
+        &quot;height&quot;: 50,
+        &quot;width&quot;: 100,
+        &quot;x&quot;: 800,
+        &quot;y&quot;: 650
+    }
+],
+</code></pre><p>中间tab<br><img src="http://p3cnyeawt.bkt.clouddn.com/SeverLauncher_img_tab.jpg" alt></p>
+<pre><code>&quot;arrTab&quot;: [
+    [{
+            &quot;name&quot;: &quot;电视&quot;,
+            &quot;image_icon&quot;: &quot; http://image.baidu.com/i?tn=download&amp;ipn=dwnl&amp;word=icon png&amp;ie=utf-8&amp;fr=result&amp;url=http:// www.icosky.com/icon/png/System/Candied Apples/Candy Apple Red 2.png&quot;,
+            &quot;action&quot;: &quot;com.kylin.action&quot;,
+            &quot;image_content&quot;: &quot;&quot;,
+            &quot;id&quot;: 11,
+            &quot;NextFocusUpId&quot;: -1,
+            &quot;NextFocusRightId&quot;: 12,
+            &quot;NextFocusLeftId&quot;: -1,
+            &quot;NextFocusDownId&quot;: 15,
+            &quot;nameSize&quot;: 25,
+            &quot;hasFocus&quot;: true,
+            &quot;height&quot;: 250,
+            &quot;width&quot;: 250,
+            &quot;x&quot;: 50,
+            &quot;y&quot;: 20
+        },
+        {
+            &quot;name&quot;: &quot;TV&quot;,
+            &quot;image_icon&quot;: &quot; http://image.baidu.com/i?tn=download&amp;ipn=dwnl&amp;word=icon png&amp;ie=utf-8&amp;fr=result&amp;url=http:// www.sucaitianxia.com/png/UploadFiles_6130/200807/20080702002356141.png&quot;,
+            &quot;action&quot;: &quot;com.kylin.action&quot;,
+            &quot;image_content&quot;: &quot;&quot;,
+            &quot;id&quot;: 12,
+            &quot;NextFocusUpId&quot;: -1,
+            &quot;NextFocusRightId&quot;: 13,
+            &quot;NextFocusLeftId&quot;: 11,
+            &quot;NextFocusDownId&quot;: -1,
+            &quot;nameSize&quot;: 25,
+            &quot;hasFocus&quot;: true,
+            &quot;height&quot;: 250,
+            &quot;width&quot;: 250,
+            &quot;x&quot;: 300,
+            &quot;y&quot;: 20
+        },
+        {
+            &quot;name&quot;: &quot;歌华有线&quot;,
+            &quot;image_icon&quot;: &quot; http://image.baidu.com/i?tn=download&amp;ipn=dwnl&amp;word=png å°å¾&amp;ie=utf-8&amp;fr=result&amp;url=http://img.sj33.cn/uploads/allimg/201009/20100918144426835.png&quot;,
+            &quot;action&quot;: &quot;com.kylin.action&quot;,
+            &quot;image_content&quot;: &quot;&quot;,
+            &quot;id&quot;: 13,
+            &quot;NextFocusUpId&quot;: -1,
+            &quot;NextFocusRightId&quot;: 14,
+            &quot;NextFocusLeftId&quot;: 12,
+            &quot;NextFocusDownId&quot;: -1,
+            &quot;nameSize&quot;: 25,
+            &quot;hasFocus&quot;: true,
+            &quot;height&quot;: 250,
+            &quot;width&quot;: 250,
+            &quot;x&quot;: 550,
+            &quot;y&quot;: 20
+        },
+        {
+            &quot;name&quot;: &quot;百事通&quot;,
+            &quot;image_icon&quot;: &quot; http://image.baidu.com/i?tn=download&amp;ipn=dwnl&amp;word=png å°å¾&amp;ie=utf-8&amp;fr=result&amp;url=http://p1.qqyou.com/pic/uploadpic/2011-4/201143921218128.png&quot;,
+            &quot;action&quot;: &quot;com.kylin.action&quot;,
+            &quot;image_content&quot;: &quot;&quot;,
+            &quot;id&quot;: 14,
+            &quot;NextFocusUpId&quot;: -1,
+            &quot;NextFocusRightId&quot;: -1,
+            &quot;NextFocusLeftId&quot;: 13,
+            &quot;NextFocusDownId&quot;: -1,
+            &quot;nameSize&quot;: 25,
+            &quot;hasFocus&quot;: true,
+            &quot;height&quot;: 250,
+            &quot;width&quot;: 250,
+            &quot;x&quot;: 800,
+            &quot;y&quot;: 20
+        },
+        {
+            &quot;name&quot;: &quot;回看&quot;,
+            &quot;image_icon&quot;: &quot; http://image.baidu.com/i?tn=download&amp;ipn=dwnl&amp;word=icon png&amp;ie=utf-8&amp;fr=result&amp;url=http:// www.icosky.com/icon/png/System/Candied Apples/Candy Apple Red 2.png&quot;,
+            &quot;action&quot;: &quot;com.kylin.action&quot;,
+            &quot;image_content&quot;: &quot;&quot;,
+            &quot;id&quot;: 15,
+            &quot;NextFocusUpId&quot;: 11,
+            &quot;NextFocusRightId&quot;: -1,
+            &quot;NextFocusLeftId&quot;: -1,
+            &quot;NextFocusDownId&quot;: -1,
+            &quot;nameSize&quot;: 25,
+            &quot;hasFocus&quot;: true,
+            &quot;height&quot;: 250,
+            &quot;width&quot;: 250,
+            &quot;x&quot;: 50,
+            &quot;y&quot;: 250
+        }
+    ],
+    [{
+            &quot;name&quot;: &quot;设置&quot;,
+            &quot;image_icon&quot;: &quot; http://image.baidu.com/i?tn=download&amp;ipn=dwnl&amp;word=icon png&amp;ie=utf-8&amp;fr=result&amp;url=http:// www.icosky.com/icon/png/System/Candied Apples/Candy Apple Red 2.png&quot;,
+            &quot;image_content&quot;: &quot;&quot;,
+            &quot;id&quot;: 50,
+            &quot;NextFocusUpId&quot;: -1,
+            &quot;NextFocusRightId&quot;: 51,
+            &quot;NextFocusLeftId&quot;: -1,
+            &quot;NextFocusDownId&quot;: 52,
+            &quot;nameSize&quot;: 25,
+            &quot;hasFocus&quot;: true,
+            &quot;height&quot;: 250,
+            &quot;width&quot;: 250,
+            &quot;x&quot;: 50,
+            &quot;y&quot;: 20
+        },
+        {
+            &quot;name&quot;: &quot;TV&quot;,
+            &quot;image_icon&quot;: &quot; http://image.baidu.com/i?tn=download&amp;ipn=dwnl&amp;word=icon png&amp;ie=utf-8&amp;fr=result&amp;url=http:// www.icosky.com/icon/png/System/Candied Apples/Candy Apple Red 2.png&quot;,
+            &quot;image_content&quot;: &quot;&quot;,
+            &quot;id&quot;: 51,
+            &quot;NextFocusUpId&quot;: -1,
+            &quot;NextFocusRightId&quot;: -1,
+            &quot;NextFocusLeftId&quot;: 50,
+            &quot;NextFocusDownId&quot;: -1,
+            &quot;nameSize&quot;: 25,
+            &quot;hasFocus&quot;: true,
+            &quot;height&quot;: 250,
+            &quot;width&quot;: 850,
+            &quot;x&quot;: 350,
+            &quot;y&quot;: 20
+        },
+        {
+            &quot;name&quot;: &quot;回看&quot;,
+            &quot;image_icon&quot;: &quot; http://image.baidu.com/i?tn=download&amp;ipn=dwnl&amp;word=icon png&amp;ie=utf-8&amp;fr=result&amp;url=http:// www.icosky.com/icon/png/System/Candied Apples/Candy Apple Red 2.png&quot;,
+            &quot;image_content&quot;: &quot;&quot;,
+            &quot;id&quot;: 52,
+            &quot;NextFocusUpId&quot;: 50,
+            &quot;NextFocusRightId&quot;: 51,
+            &quot;NextFocusLeftId&quot;: -1,
+            &quot;NextFocusDownId&quot;: -1,
+            &quot;nameSize&quot;: 25,
+            &quot;hasFocus&quot;: true,
+            &quot;height&quot;: 250,
+            &quot;width&quot;: 250,
+            &quot;x&quot;: 50,
+            &quot;y&quot;: 250
+        },
+        {
+            &quot;image_content&quot;: &quot; http://image.baidu.com/i?tn=download&amp;ipn=dwnl&amp;word=å¹¿å&amp;ie=utf-8&amp;fr=result&amp;url=http://pic17.nipic.com/20111030/178350_181133315001_2.jpg&quot;,
+            &quot;id&quot;: 53,
+            &quot;NextFocusUpId&quot;: -1,
+            &quot;NextFocusRightId&quot;: -1,
+            &quot;NextFocusLeftId&quot;: -1,
+            &quot;NextFocusDownId&quot;: -1,
+            &quot;nameSize&quot;: 0,
+            &quot;hasFocus&quot;: false,
+            &quot;height&quot;: 250,
+            &quot;width&quot;: 600,
+            &quot;x&quot;: 300,
+            &quot;y&quot;: 250
+        }
+    ],
+    [{
+            &quot; nameBg&quot;: &quot;#CC000000&quot;, //-------------------文字背景色
+            &quot;name&quot;: &quot;匆匆那些年&quot;,
+            &quot;image_content&quot;: &quot; http://f.hiphotos.baidu.com/baike/c0=baike116,5,5,116,38/sign=82e87630262dd42a4b0409f9625230d0/96dda144ad345982e775c6cb0ff431adcaef84ef.jpg&quot;,
+            &quot;id&quot;: 50,
+            &quot;NextFocusUpId&quot;: -1,
+            &quot;NextFocusRightId&quot;: 51,
+            &quot;NextFocusLeftId&quot;: -1,
+            &quot;NextFocusDownId&quot;: -1,
+            &quot;nameSize&quot;: 25,
+            &quot;hasFocus&quot;: true,
+            &quot;height&quot;: 550,
+            &quot;width&quot;: 750,
+            &quot;x&quot;: 20,
+            &quot;y&quot;: 20
+        },
+        {
+            &quot;nameBg&quot;: &quot;#CC000000&quot;,
+            &quot;name&quot;: &quot;重返地球&quot;,
+            &quot;image_content&quot;: &quot; http://image.baidu.com/i?tn=download&amp;ipn=dwnl&amp;word=çµå½±æµ·æ¥å¾&amp;ie=utf-8&amp;fr=result&amp;url=http://down1.sucaitianxia.com/psd02/psd179/psds36925.jpg&quot;,
+            &quot;id&quot;: 51,
+            &quot;NextFocusUpId&quot;: -1,
+            &quot;NextFocusRightId&quot;: 52,
+            &quot;NextFocusLeftId&quot;: 50,
+            &quot;NextFocusDownId&quot;: -1,
+            &quot;nameSize&quot;: 25,
+            &quot;hasFocus&quot;: true,
+            &quot;height&quot;: 550,
+            &quot;width&quot;: 300,
+            &quot;x&quot;: 730,
+            &quot;y&quot;: 20
+        },
+        {
+            &quot;nameBg&quot;: &quot;#CC000000&quot;,
+            &quot;name&quot;: &quot;银河护卫队&quot;,
+            &quot;image_content&quot;: &quot; http://image.baidu.com/i?tn=download&amp;ipn=dwnl&amp;word=çµå½±&amp;ie=utf-8&amp;fr=result&amp;url=http:// www.ln.chinanews.com/UploadFiles/2014/8/201408051648340612.jpg&quot;,
+            &quot;id&quot;: 52,
+            &quot;NextFocusUpId&quot;: -1,
+            &quot;NextFocusRightId&quot;: -1,
+            &quot;NextFocusLeftId&quot;: 51,
+            &quot;NextFocusDownId&quot;: -1,
+            &quot;nameSize&quot;: 25,
+            &quot;hasFocus&quot;: true,
+            &quot;height&quot;: 550,
+            &quot;width&quot;: 250,
+            &quot;x&quot;: 1000,
+            &quot;y&quot;: 20
+        }
+    ],
+    [{
+            &quot;nameColor&quot;: &quot;#000080&quot;,
+            &quot;nameBg&quot;: &quot;#CC000000&quot;,
+            &quot;name&quot;: &quot;魁拔&quot;,
+            &quot;image_content&quot;: &quot; http://e.hiphotos.baidu.com/baike/c0=baike272,5,5,272,90/sign=e0e4cc8f39292df583cea447dd583705/838ba61ea8d3fd1f353eab9a334e251f95ca5f5e.jpg&quot;,
+            &quot;id&quot;: 50,
+            &quot;NextFocusUpId&quot;: -1,
+            &quot;NextFocusRightId&quot;: 51,
+            &quot;NextFocusLeftId&quot;: -1,
+            &quot;NextFocusDownId&quot;: -1,
+            &quot;nameSize&quot;: 25,
+            &quot;hasFocus&quot;: true,
+            &quot;height&quot;: 550,
+            &quot;width&quot;: 250,
+            &quot;x&quot;: 30,
+            &quot;y&quot;: 20
+        },
+        {
+            &quot;nameColor&quot;: &quot;#000080&quot;,
+            &quot;nameBg&quot;: &quot;#33FF0000&quot;,
+            &quot;name&quot;: &quot;天降雄狮&quot;,
+            &quot;image_content&quot;: &quot; http://image.baidu.com/i?tn=download&amp;ipn=dwnl&amp;word=å¤©ééç®&amp;ie=utf-8&amp;fr=result&amp;url=http://f.hiphotos.baidu.com/zhidao/pic/item/dcc451da81cb39dbfb89d81ed3160924ab183028.jpg&quot;,
+            &quot;id&quot;: 51,
+            &quot;NextFocusUpId&quot;: -1,
+            &quot;NextFocusRightId&quot;: 52,
+            &quot;NextFocusLeftId&quot;: 50,
+            &quot;NextFocusDownId&quot;: -1,
+            &quot;nameSize&quot;: 25,
+            &quot;hasFocus&quot;: true,
+            &quot;height&quot;: 550,
+            &quot;width&quot;: 300,
+            &quot;x&quot;: 250,
+            &quot;y&quot;: 20
+        },
+        {
+            &quot;nameBg&quot;: &quot;#33000000&quot;,
+            &quot;name&quot;: &quot;中国合伙人&quot;,
+            &quot;image_content&quot;: &quot; http://image.baidu.com/i?tn=download&amp;ipn=dwnl&amp;word=ä¸­å½åä¼äºº&amp;ie=utf-8&amp;fr=result&amp;url=http:// www.lizhi123.net/uploads/allimg/130525/4_130525175139_1.png&quot;,
+            &quot;id&quot;: 52,
+            &quot;NextFocusUpId&quot;: -1,
+            &quot;NextFocusRightId&quot;: -1,
+            &quot;NextFocusLeftId&quot;: 51,
+            &quot;NextFocusDownId&quot;: -1,
+            &quot;nameSize&quot;: 25,
+            &quot;hasFocus&quot;: true,
+            &quot;height&quot;: 550,
+            &quot;width&quot;: 800,
+            &quot;x&quot;: 520,
+            &quot;y&quot;: 20
+        }
+    ]
+]
+</code></pre><hr>
+<p>“nameColor”: “#000080”,     ——文字的颜色<br>“nameBg”: “#CC000000”,     —— 文字背景颜色<br>“name”: “魁拔”,<br>“image_content”: “ <a href="http://e.hiphotos.baidu.com/baike/c0" target="_blank" rel="noopener">http://e.hiphotos.baidu.com/baike/c0</a> %3Dbaike272%2C5%2C5%2C272%2C90/sign=e0e4cc8f39292df583cea447dd583705/838ba61ea8d3fd1f353eab9a334e251f95ca5f5e.jpg”,<br>“id”: 50,<br>“NextFocusUpId”: -1,<br>“NextFocusRightId”: 51,<br>“NextFocusLeftId”: -1,<br>“NextFocusDownId”: -1,<br>“nameSize”: 25,<br>“hasFocus”: true,<br>“height”: 550,<br>“width”: 250,<br>“x”: 30,<br>“y”: 20 </p>
+<p><img src="http://p3cnyeawt.bkt.clouddn.com/SeverLauncher_img_item1.jpg" alt></p>
+<p>“nameColor”: “#000080”,     ——文字的颜色<br>“nameBg”: “#CC000000”,     —— 文字背景颜色<br>image_content   —–  底图url<br>“nameSize”: 25,   —-文字大小</p>
+<p>image_icon     —–  icon  url<br><img src="http://p3cnyeawt.bkt.clouddn.com/SeverLauncher_img_item2.jpg" alt></p>
+<pre><code>&quot;id&quot;: 50,    //----每个view对于的id
+&quot;NextFocusUpId&quot;: -1,   //---- 当前view 向上 view的id
+&quot;NextFocusRightId&quot;: 51, //---- 当前view 向右 view的id
+&quot;NextFocusLeftId&quot;: -1,  //---- 当前view 向左 view的id
+&quot;NextFocusDownId&quot;: -1,  //---- 当前view 向下 view的id
+</code></pre><p>这几个控制 TV 的焦点跳转  -1  不能跳转<br>NextFocusRightId  当焦点位于该控件 点击 右  焦点 跳转到 id为51 的控件上</p>
+<hr>
+<p>android 源码 找不到了<br>当年放在 taobaosvn上<br><a href="http://code.taobao.org/" target="_blank" rel="noopener">http://code.taobao.org/</a></p>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/images/ali_pay.png"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/images/wx_pay.png"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">打赏</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/工具/科学上网/" class="pre-post btn btn-default" title="科学上网">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">科学上网</span>
+        </a>
+    
+    
+        <a href="/Work/工作任务/" class="next-post btn btn-default" title="工作任务">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">工作任务</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#原理"><span class="toc-text">原理</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
